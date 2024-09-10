@@ -1,0 +1,86 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playwrite+CU:wght@100..400&display=swap');
+
+
+:root{
+   --main-color:#34ad94;
+   --btnHover-color: #05b8b8;
+   --primary-color: rgb(73, 148, 246);
+   --second-color: #efd388;
+   --third-color: rgb(52, 123, 216);
+   --main-transition: 0.4s ease;
+   -webkit-transition: 0.2s ease;
+   -moz-transition: 0.2s ease;
+   -ms-transition: 0.2s ease;
+   -o-transition: 0.2s ease;
+}
+
+
+
+/*&==========Start Global Rules ===========*/
+   *{
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      /* font-family:  cursive ; */
+      font-family: "Oswald", sans-serif;
+   }
+   html{
+      scroll-behavior: smooth;
+   }
+   /* body{
+      font-family:  cursive ;
+   } */
+   ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+   }
+   a{
+      text-decoration: none !important;
+      color: white;
+   }
+   .main-color {
+      color:var(--main-color) !important ;
+   }
+   .bg-main {
+      background-color:var(--main-color) !important;
+      color: white !important;
+   }
+   .bg-color:hover {
+      background-color: var(--btnHover-color) !important;
+   } 
+
+
+@media (max-width: 990px){
+
+}
+/*&==========Ens Global Rules  ===========*/
+
+
+/*Start Media Screen */
+                     /* Mobil Screen */
+@media (max-width: 767px) {
+}
+                     /* Small Screen */
+@media (min-width: 768px) {
+}
+                     /* Medium Screen */
+@media (min-width:992px){
+}
+                     /* Large Screen */
+@media (min-width:1200px){
+}
+/*End Media Screen */
+
+
+/*& ========= Start Loading Component ============ */
+   .spinner-border {
+      width: 150px !important;
+      height: 150px !important;
+      border-width: 10px !important;
+      }
+/*& ========== End Loading Component ============ */
