@@ -1,0 +1,20 @@
+.container_discoverOffers .breadcrumb{
+   padding: 40px !important;
+}
+.container_discoverOffers .alertOffers{
+   margin: 100px 0px;
+   padding: 20px 35px;
+   font-size: 17px;
+   border-left: 6px solid var(--primary-color);
+}
+
+
+/* .container_discoverOffers .wishList_icon {
+   top: 190px;
+   right: 25px;
+   padding: 16px;
+   color: black;
+   font-size: 14px;
+   width: 20px;
+   height: 20px;
+} */

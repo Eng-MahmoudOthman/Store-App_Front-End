@@ -1,0 +1,17 @@
+
+/*Start Media Screen */
+   /* Mobil Screen */
+   @media (max-width: 767px) {
+   }
+                        /* Small Screen */
+   @media (min-width: 768px) {
+   }
+                        /* Medium Screen */
+   @media (min-width:992px){
+   }
+                        /* Large Screen */
+   @media (min-width:1200px){
+   }
+/*End Media Screen */
+   
+

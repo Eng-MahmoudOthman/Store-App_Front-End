@@ -1,0 +1,96 @@
+
+
+
+
+/*Start Media Screen */
+   /* Mobil Screen */
+   @media (max-width: 767px) {
+   }
+                        /* Small Screen */
+   @media (min-width: 768px) {
+   }
+                        /* Medium Screen */
+   @media (min-width:992px){
+   }
+                        /* Large Screen */
+   @media (min-width:1200px){
+   }
+/*End Media Screen */
+   
+
+
+
+
+
+.review_Product_Details .nav {
+   --bs-nav-link-padding-x: 1rem;
+   --bs-nav-link-padding-y: 0.5rem;
+   --bs-nav-link-font-weight: ;
+   --bs-nav-link-color: var(--bs-link-color);
+   --bs-nav-link-hover-color: var(--bs-link-hover-color);
+   --bs-nav-link-disabled-color: var(--bs-secondary-color);
+   display: flex;
+   flex-wrap: wrap;
+   padding-left: 0;
+   margin-bottom: 0;
+   list-style: none;
+   justify-content: center;
+}
+.review_Product_Details .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+   color: var(--bs-nav-tabs-link-active-color);
+   background-color: var(--bs-nav-tabs-link-active-bg);
+   border-color: var(--main-color) !important;
+}
+.review_Product_Details .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+   isolation: isolate;
+   border-color: transparent ;
+}
+
+
+.review_Product_Details .nav-tabs .nav-link {
+   border: none;
+   border-bottom: 3px solid transparent;
+   margin-bottom: 0px ;
+   font-size: 20px ;
+}
+
+
+
+.review_Product_Details .rating {
+   unicode-bidi: bidi-override;
+   direction: ltr; 
+}
+
+.review_Product_Details .rating  > input {
+   display: none;
+}
+
+.review_Product_Details .rating  > label {
+   display: inline-block;
+   cursor: pointer;
+   color: #e0dddd;
+}
+
+.review_Product_Details .rating  > label:before {
+   content: '★';
+   margin: 2px;
+   font-size: 1.8em;
+}
+
+.review_Product_Details .rating  > input:checked ~ label {
+   color: black;
+}
+
+.review_Product_Details .rating  > input:checked ~ label:before {
+   color: black;
+}
+
+/* .review_Product_Details .rating  > label:hover,
+.review_Product_Details .rating  > label:hover ~ label {
+   color: rgb(73, 72, 72);
+}
+
+.review_Product_Details .rating  > label:hover:before,
+.review_Product_Details .rating  > label:hover ~ label:before {
+   color: rgb(73, 72, 72);
+} */

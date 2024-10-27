@@ -1,0 +1,178 @@
+/* 
+.container_counterHome {
+   background-image: url(../../Assets/images/background_Counter.avif);
+   background-attachment: fixed;
+   position: relative;
+   min-height: 400px;
+
+}
+.container_counterHome .move_counter {
+   min-height: 300px;
+   min-width: auto;
+   padding: 10px 20px;
+   position: absolute;
+   top: 50%;
+   right: 30px;
+   transform: translateY(-50%);
+   -webkit-transform: translateY(-50%);
+   -moz-transform: translateY(-50%);
+   -ms-transform: translateY(-50%);
+   -o-transform: translateY(-50%);
+}
+
+.container_counterHome .move_image {
+   position: absolute;
+   top: 50%;
+   left: 30px;
+   transform: translateY(-50%);
+   -webkit-transform: translateY(-50%);
+   -moz-transform: translateY(-50%);
+   -ms-transform: translateY(-50%);
+   -o-transform: translateY(-50%);
+}
+
+
+@media (max-width: 767px) {
+   .container_counterHome .row {
+      flex-direction: column;
+   }
+}
+
+
+
+
+.container_counterHome .title-count {
+   font-size: 28px;
+   font-weight: bold;
+   margin-bottom: 14px;
+}
+.container_counterHome .image_counter {
+   background-color:  #ffffff;
+   background-image:url(../../Assets/images/women-3.jpeg);
+   background-size: cover;
+   background-position: center center;
+   background-attachment: scroll;
+   background-repeat: no-repeat;
+   min-height: 300px;
+   min-width: auto;
+   padding: 10px 20px;
+}
+.container_counterHome .text-count {
+   margin-top: 10px;
+   font-size: 17px;
+}
+.container_counterHome .number-counter {
+   font-weight: bold;
+}
+.container_counterHome .btn-discovery {
+   padding: 10px 18px !important ;
+}
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .one {
+   animation: fadeIn .5s infinite alternate;
+} */
+
+
+.container_counterHome {
+   background-image: url(../../Assets/images/logo.png);
+   background-position: center center;
+   background-repeat: repeat;
+   overflow: hidden;
+}
+.container_counterHome .move_counter {
+   min-height: 300px;
+   min-width: auto;
+   padding: 10px 20px;
+   transform: translateX(800px);
+   -webkit-transform: translateX(800px);
+   -moz-transform: translateX(800px);
+   -ms-transform: translateX(800px);
+   -o-transform: translateX(800px);
+   opacity: 0;
+}
+.container_counterHome .move_image {
+   transform: translateX(-800px);
+   -webkit-transform: translateX(-800px);
+   -moz-transform: translateX(-800px);
+   -ms-transform: translateX(-800px);
+   -o-transform: translateX(-800px);
+   opacity: 0;
+}
+
+.show {
+   transition:1s ease;
+   transform: translateX(0px) !important;
+   -webkit-transform: translateX(0px) !important;
+   -moz-transform: translateX(0px) !important;
+   -ms-transform: translateX(0px) !important;
+   -o-transform: translateX(0px) !important;
+   opacity: 1 !important;
+   -webkit-transition:1s ease;
+   -moz-transition:1s ease;
+   -ms-transition:1s ease;
+   -o-transition:1s ease;
+}
+.container_counterHome .title-count {
+   font-size: 28px;
+   font-weight: bold;
+   margin-bottom: 14px;
+}
+.container_counterHome .image_counter {
+   background-color:  #ffffff;
+   background-image:url(../../Assets/images/women-3.jpeg);
+   background-size: cover;
+   background-position: center center;
+   background-attachment: scroll;
+   background-repeat: no-repeat;
+   min-height: 300px;
+   min-width: auto;
+   padding: 10px 20px;
+}
+.container_counterHome .text-count {
+   margin-top: 10px;
+   font-size: 17px;
+}
+.container_counterHome .number-counter {
+   font-weight: 900;
+}
+.container_counterHome .btn-discovery {
+   padding: 10px 18px !important ;
+}
+

@@ -1,17 +1,12 @@
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playwrite+CU:wght@100..400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 
 :root{
-   --main-color:#34ad94;
-   --btnHover-color: #05b8b8;
-   --primary-color: rgb(73, 148, 246);
-   --second-color: #efd388;
+   --main-color:#954ff6;
+   --primary-color: rgb(179,97,221);
+   --gradient-color: linear-gradient(to bottom, #8e44ad, #bc7bc2);
    --third-color: rgb(52, 123, 216);
-   --main-transition: 0.4s ease;
+   --main-transition: 0.2s ease;
    -webkit-transition: 0.2s ease;
    -moz-transition: 0.2s ease;
    -ms-transition: 0.2s ease;
@@ -25,15 +20,18 @@
       box-sizing: border-box;
       padding: 0;
       margin: 0;
-      /* font-family:  cursive ; */
-      font-family: "Oswald", sans-serif;
-   }
+      transition: var(--main-transition);
+      -webkit-transition: var(--main-transition);
+      -moz-transition: var(--main-transition);
+      -ms-transition: var(--main-transition);
+      -o-transition: var(--main-transition);
+}
    html{
       scroll-behavior: smooth;
    }
-   /* body{
-      font-family:  cursive ;
-   } */
+   body{
+      font-family: "Cairo", sans-serif;
+   }
    ul{
       list-style: none;
       margin: 0;
@@ -50,14 +48,7 @@
       background-color:var(--main-color) !important;
       color: white !important;
    }
-   .bg-color:hover {
-      background-color: var(--btnHover-color) !important;
-   } 
 
-
-@media (max-width: 990px){
-
-}
 /*&==========Ens Global Rules  ===========*/
 
 
@@ -84,3 +75,127 @@
       border-width: 10px !important;
       }
 /*& ========== End Loading Component ============ */
+
+
+/* 
+.one {
+   animation: fadeIn .5s infinite alternate;
+} */
+
+
+
+.main-btn {
+   background: linear-gradient(-45deg , #ce6bec 20% , var(--main-color) 100%);
+   cursor:pointer;
+   color:#ffffff !important;
+   font-weight:bold;
+   font-size: 14px;
+   min-width: 140px;
+   padding:10px 20px !important;
+   border-radius: 3px ;
+   -webkit-border-radius: 3px ;
+   -moz-border-radius: 3px ;
+   -ms-border-radius: 3px ;
+   -o-border-radius: 3px ;
+}
+.btn-cart {
+   word-spacing: 4px;
+   font-size: 18px;
+   font-weight: normal;
+   padding: 6px 0px !important;
+   margin: 20px 0px 0px ;
+}
+.main-btn:hover {
+   background: linear-gradient(-45deg,  var(--main-color) 20% , #ce6bec 100%);
+}
+
+
+
+/*& ========== Start Bread Crumb Component ============ */
+   .breadcrumb{
+      font-size: 14px !important;
+   }
+   .breadcrumb li:hover a{
+      text-decoration: underline !important;
+   }
+/*& ========== End Bread Crumb Component ============ */
+
+
+
+
+
+
+/*& ========== Start Slider Home Component ============ */
+
+   .slick-dots  {
+      margin: -25px 0px;
+   }
+   .slick-dots li {
+      width: 20px;
+      height: 20px;
+      margin: 10px -2px;
+      padding: 0;
+      cursor: pointer;
+   }
+   .slick-dots li button:before {
+      font-size: 12px;
+      line-height: 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      content: '•';
+      text-align: center;
+      opacity: .25;
+      color: var(--main-color) ;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+   }
+   .container_sliderHomeMan .btn_slider ,
+   .container_sliderHomeWomen .btn_slider {
+      font-size: 15px;
+      padding: 6px 15px;
+      color: black;
+   }
+   /* .container_sliderHomeMan .div_sale ,
+   .container_sliderHomeWomen .div_sale {
+      background: linear-gradient(-45deg, #ce6bec 20%, var(--main-color) 100%);
+      top: 15px;
+      right: 30px;
+      padding: 2px 16px;
+      font-size: 14px;
+   } */
+   /* .container_sliderHomeMan .wishList_icon ,
+   .container_sliderHomeWomen .wishList_icon {
+      top: 190px;
+      right: 25px;
+      padding: 16px;
+      color: black;
+      font-size: 14px;
+      width: 20px;
+      height: 20px;
+   } */
+   .div_sale {
+      background: linear-gradient(-45deg, #ce6bec 20%, var(--main-color) 100%);
+      top: 15px;
+      right: 30px;
+      padding: 2px 16px;
+      font-size: 14px;
+   }
+   .wishList_icon {
+      top: 190px;
+      right: 25px;
+      padding: 16px;
+      color: black;
+      font-size: 14px;
+      width: 20px;
+      height: 20px;
+   }
+/*& ========== End  Slider Home Component ============ */
+
+/*& ========== Start jQuery Slider Home Men And Women And FeatureHome  Component ============ */
+   .move {
+      right: 0px !important;
+   }
+/*& ========== End jQuery Slider Home Men And Women  Component ============ */

@@ -1,0 +1,41 @@
+
+
+
+/*Start Media Screen */
+   /* Mobil Screen */
+   @media (max-width: 767px) {
+   }
+                        /* Small Screen */
+   @media (min-width: 768px) {
+   }
+                        /* Medium Screen */
+   @media (min-width:992px){
+   }
+                        /* Large Screen */
+   @media (min-width:1200px){
+   }
+/*End Media Screen */
+
+
+.container_sliderHomeMan  {
+   margin: 100px 0px;
+   overflow: hidden;
+}
+.container_sliderHomeMan .head_men {
+   position: relative;
+   right: -300px;
+   transition: 1s ease;
+   -webkit-transition: 1s ease;
+   -moz-transition: 1s ease;
+   -ms-transition: 1s ease;
+   -o-transition: 1s ease;
+}
+
+
+
+
+
+
+
+
+

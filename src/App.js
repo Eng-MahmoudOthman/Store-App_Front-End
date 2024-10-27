@@ -1,9 +1,7 @@
 import { RouterProvider , createHashRouter } from 'react-router-dom';
 import './App.css';
-import { useContext, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
-import { UserContext } from './Context/UserContext.js';
-import { jwtDecode } from 'jwt-decode';
+// import { jwtDecode } from 'jwt-decode';
 import io from "../node_modules/socket.io/client-dist/socket.io.js"
 
 import Layout from './Components/Layout/Layout.jsx';
@@ -15,6 +13,12 @@ import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
 import Cart from './Components/Cart/Cart.jsx';
 import Contact from './Components/Contact/Contact.jsx';
 import UserProfile from './Components/UserProfile/UserProfile.jsx';
+import ForgetPassword from './Components/ForgetPassword/ForgetPassword.jsx';
+import DiscoverOffers from './Components/DiscoverOffers/DiscoverOffers.jsx';
+import ManSocks from './Components/ManSocks/ManSocks.jsx';
+import WomenSocks from './Components/WomenSocks/WomenSocks.jsx';
+import ProductDetails from './Components/ProductDetails/ProductDetails.jsx';
+import { Switch } from 'antd';
 
 
 
@@ -31,6 +35,11 @@ let routers = createHashRouter([
 		{path:"contact" , element:<Contact/>} , 
 		{path:"login" , element:<Login />} , 
 		{path:"register" , element:<Register/>} , 
+		{path:"manSocks" , element:<ManSocks/>} , 
+		{path:"womenSocks" , element:<WomenSocks/>} , 
+		{path:"productDetails/:id" , element:<ProductDetails/>} , 
+		{path:"discoverOffers" , element:<DiscoverOffers/>} , 
+		{path:"forgetPassword/:id" , element:<ForgetPassword/>} , 
 		{path:"cart" , element:<ProtectedRoute><Cart/></ProtectedRoute>} , 
 		{path:"userProfile" , element:<ProtectedRoute><UserProfile/></ProtectedRoute>} , 
 		{path:"*" , element:<NotFound/>} , 
@@ -83,6 +92,7 @@ function App() {
 		<>
 			<RouterProvider router={routers} ></RouterProvider>
 			<Toaster/>
+			<Switch/>
 		</>
 	);
 }

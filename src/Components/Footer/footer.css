@@ -1,0 +1,61 @@
+
+
+/*Start Media Screen */
+   /* Mobil Screen */
+   @media (max-width: 767px) {
+   }
+                        /* Small Screen */
+   @media (min-width: 768px) {
+   }
+                        /* Medium Screen */
+   @media (min-width:992px){
+   }
+                        /* Large Screen */
+   @media (min-width:1200px){
+   }
+/*End Media Screen */
+
+
+
+
+.footer {
+   margin-top: 100px;
+}
+.footer .footer_link{
+   color:rgb(80,85,94);
+   display: flex;
+   justify-content: right;
+   align-items: center;
+   margin: 5px 0px;
+   letter-spacing: 1px;
+}
+.footer .footer_link:hover{
+   color: rgb(225, 0, 255);
+}
+
+.footer .footer_link .icon{
+   margin-left: 20px;
+   font-size: 18px;
+}
+.footer .footer_title {
+   font-size: 20px;
+   font-weight: 500;
+   text-align: start;
+}
+.footer .logo_Footer {
+   width: 70px;
+}
+.footer .text_footer {
+   font-size: 17px;
+}
+.footer .developer_link {
+   color: rgb(80,85,94);
+   margin-left: 2px;
+}
+.footer .developer_link:hover {
+   text-decoration: underline !important;
+   color: rgb(225, 0, 255);
+}
+
+
+/* sec_logo */

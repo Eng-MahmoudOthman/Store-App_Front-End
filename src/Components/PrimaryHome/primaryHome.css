@@ -1,0 +1,101 @@
+
+/* .container_featureHome{
+   min-height: 2000px ;
+}
+
+.breadcrumb {
+   direction: rtl;
+} */
+            /* .breadcrumb .breadcrumb-item {
+               float: right;
+            }
+ */
+
+
+/* .breadcrumb-item+.breadcrumb-item::before {
+   float: right;
+   padding: 0px 5px !important;
+   color: var(--bs-breadcrumb-divider-color);
+   content: var(--bs-breadcrumb-divider, "/");
+} */
+
+
+
+
+/*Start Media Screen */
+   /* Mobil Screen */
+   @media (max-width: 767px) {
+   }
+                        /* Small Screen */
+   @media (min-width: 768px) {
+   }
+                        /* Medium Screen */
+   @media (min-width:992px){
+   }
+                        /* Large Screen */
+   @media (min-width:1200px){
+   }
+/*End Media Screen */
+
+
+
+.container_primaryHome {
+   background-image: url(../../Assets/images/logo.png);
+   background-position: center center;
+   background-repeat: repeat;
+
+   overflow: hidden;
+}
+.container_primaryHome .imgHome {
+   height: 300px;
+   position: relative;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-clip: content-box;
+   opacity: 0;
+}
+
+.container_primaryHome .one_img {
+   background-image: url(../../Assets/images/bg-home1.jpeg);
+   right: 800px;
+}
+.container_primaryHome .two_img {
+   background-image: url(../../Assets/images/bg-home.jpg);
+   right: -800px;
+}
+.container_primaryHome  .cart_home {
+   width: 90% ;
+   background-color: white;
+   text-align: center;
+   padding: 15px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50% , -50%);
+   -webkit-transform: translate(-50% , -50%);
+   -moz-transform: translate(-50% , -50%);
+   -ms-transform: translate(-50% , -50%);
+   -o-transform: translate(-50% , -50%);
+   display: none;
+}
+
+/* .move_img_primary_home {
+   right: 0px !important;
+   opacity: 1 !important;
+} */
+
+
+
+   @media (min-width: 767px) {
+      .container_primaryHome  .cart_home {
+         width: 60% ;
+         top: 50%;
+      }
+   }
+   @media (min-width:992px){
+      .container_primaryHome  .cart_home {
+         width: 40% ;
+         top: 60%;
+         padding: 20px;
+      }
+   }

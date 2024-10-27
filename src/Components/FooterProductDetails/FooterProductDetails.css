@@ -1,0 +1,65 @@
+
+/*Start Media Screen */
+   /* Mobil Screen */
+   @media (max-width: 767px) {
+   }
+                        /* Small Screen */
+   @media (min-width: 768px) {
+   }
+                        /* Medium Screen */
+   @media (min-width:992px){
+   }
+                        /* Large Screen */
+   @media (min-width:1200px){
+   }
+/*End Media Screen */
+   
+
+
+
+.container_productDetails .addProductFixed .image_footer {
+   width: 60px;
+   margin-left:20px ;
+}
+.container_productDetails .addProductFixed  {
+   background: #e0e0e0;
+   box-shadow:  5px 5px 9px #d9d9d9,-5px -5px 9px #e7e7e7;
+}
+
+
+   /*^ Mobil Screen */
+   @media (max-width: 767px) {
+      .container_productDetails .addProductFixed .title_productDetails_footer ,
+      .container_productDetails .addProductFixed .image_footer {
+         display: none;
+      }
+      .container_productDetails .addProductFixed {
+         display: block !important;
+      }
+      .container_productDetails .addProductFixed .price_button{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+   }
+
+   /*^ Small Screen */
+   @media (min-width: 768px) {
+      .container_productDetails .addProductFixed .main-btn {
+         width: 200px;
+      }
+   }
+
+   /*^ Medium Screen */ 
+   @media (min-width:992px){
+      .container_productDetails .addProductFixed .main-btn {
+         width: 300px;
+      }
+   }
+
+   /*^ Large Screen */
+   @media (min-width:1200px){
+   }
+
+
+
