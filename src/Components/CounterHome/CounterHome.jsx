@@ -94,42 +94,41 @@ export default function CounterHome() {
 
                      {date.message ? <h5 className='text-end my-4'>&#128532; {date.message}</h5> 
                      : 
-                     // <div className="d-flex justify-content-end align-items-top">
+                     <div className="d-flex justify-content-end align-items-top">
 
-                     //    <div className="second  ms-3 text-center">
-                     //       <h4 className='number-counter'>{date.second}</h4>
-                     //       <p className=''>ثواني</p>
-                     //    </div>
+                        <div className="second  ms-3 text-center">
+                           <h4 className='number-counter'>{date.second}</h4>
+                           <p className=''>ثواني</p>
+                        </div>
 
-                     //    <div className="dot  ms-3 text-center">
-                     //       <h4 className='number-counter'>:</h4>
-                     //    </div>
+                        <div className="dot  ms-3 text-center">
+                           <h4 className='number-counter'>:</h4>
+                        </div>
 
-                     //    <div className="minute  ms-3 text-center">
-                     //       <h4 className='number-counter'>{date.minute}</h4>
-                     //       <p>دقائق</p>
-                     //    </div>
+                        <div className="minute  ms-3 text-center">
+                           <h4 className='number-counter'>{date.minute}</h4>
+                           <p>دقائق</p>
+                        </div>
 
-                     //    <div className="dot ms-3 text-center">
-                     //       <h4 className='number-counter'>:</h4>
-                     //    </div>
+                        <div className="dot ms-3 text-center">
+                           <h4 className='number-counter'>:</h4>
+                        </div>
 
-                     //    <div className="hours ms-3 text-center">
-                     //       <h4 className='number-counter'>{date.hours}</h4>
-                     //       <p>ساعات</p>
-                     //    </div>
+                        <div className="hours ms-3 text-center">
+                           <h4 className='number-counter'>{date.hours}</h4>
+                           <p>ساعات</p>
+                        </div>
 
-                     //    <div className="dot ms-3 text-center">
-                     //       <h4 className='number-counter'>:</h4>
-                     //    </div>
+                        <div className="dot ms-3 text-center">
+                           <h4 className='number-counter'>:</h4>
+                        </div>
 
-                     //    <div className="day ms-3 text-center">
-                     //       <h4 className='number-counter'>{date.day}</h4>
-                     //       <p>ايام</p>
-                     //    </div>
+                        <div className="day ms-3 text-center">
+                           <h4 className='number-counter'>{date.day}</h4>
+                           <p>ايام</p>
+                        </div>
 
-                     // </div>
-                     <DownTime style={{display:"d-none" , border:"border-0"}}/>
+                     </div>
                      }
 
 

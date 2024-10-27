@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react' ;
 import "./ProductInformation.css"
 import image1 from "../../Assets/images/Men-4-600x600.jpeg"
-import DownTime from '../DownTime/DownTime.jsx';
 
 
 export default function ProductInformation() {
@@ -52,7 +51,7 @@ export default function ProductInformation() {
                      </p>
                   </div>
 
-                  {/* <div className='position-relative mt-5'>
+                  <div className='position-relative mt-5'>
                      <div dir='ltr' className="d-flex justify-content-center align-items-top timer_productDetails">
                         <div className="second  ms-3 text-center">
                            <h4 className='number-counter'>34</h4>
@@ -90,9 +89,8 @@ export default function ProductInformation() {
                      <div className='message_counter_productDetails position-absolute bg-white p-1'>
                         <p className='m-0'>خصم 100 جنيه للطلبات +999ج 🥳</p>
                      </div>
-                  </div> */}
+                  </div>
 
-                  <DownTime/>
 
                   <div className="row justify-content-around align-items-center mt-4 g-1">
                      <div className="col-4">

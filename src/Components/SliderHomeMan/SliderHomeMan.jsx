@@ -91,10 +91,10 @@ export default function SliderHomeMan() {
                         <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
                            <div className="px-3 position-relative">
                               <img src={slider1} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
+                              <p className='my-1 text-black ' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
                               <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                                  <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                               </div>
                               <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                               <div className='position-absolute text-white div_sale' dir='rtl'>وفر  500%  </div>
@@ -108,10 +108,10 @@ export default function SliderHomeMan() {
                         <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
                            <div className="px-3 position-relative">
                               <img src={slider1} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
+                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
                               <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                                  <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                               </div>
                               <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                               <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
@@ -125,10 +125,10 @@ export default function SliderHomeMan() {
                         <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
                            <div className="px-3 position-relative">
                               <img src={slider2} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
+                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
                               <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                                  <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                               </div>
                               <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                               <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
@@ -142,10 +142,10 @@ export default function SliderHomeMan() {
                         <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
                            <div className="px-3 position-relative">
                               <img src={slider3} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
+                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
                               <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                                  <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                               </div>
                               <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                               <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
@@ -159,10 +159,10 @@ export default function SliderHomeMan() {
                         <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
                            <div className="px-3 position-relative">
                               <img src={slider4} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
+                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
                               <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                                  <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                               </div>
                               <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                               <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
@@ -176,10 +176,10 @@ export default function SliderHomeMan() {
                         <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
                            <div className="px-3 position-relative">
                               <img src={slider5} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
+                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
                               <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                                  <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                               </div>
                               <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                               <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
@@ -193,10 +193,10 @@ export default function SliderHomeMan() {
                         <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
                            <div className="px-3 position-relative">
                               <img src={slider6} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
+                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
                               <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                                  <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                               </div>
                               <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                               <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
@@ -210,10 +210,10 @@ export default function SliderHomeMan() {
                         <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
                            <div className="px-3 position-relative">
                               <img src={slider7} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
+                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
                               <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                                  <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                               </div>
                               <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                               <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
@@ -227,10 +227,10 @@ export default function SliderHomeMan() {
                         <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
                            <div className="px-3 position-relative">
                               <img src={slider8} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
+                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
                               <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                                  <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
                               </div>
                               <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                               <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
