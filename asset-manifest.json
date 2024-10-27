@@ -1,14 +1,34 @@
 {
   "files": {
-    "main.css": "/Store-App_Front-End/static/css/main.3a8a86e8.css",
-    "main.js": "/Store-App_Front-End/static/js/main.c44b95e7.js",
-    "static/js/453.d12ec802.chunk.js": "/Store-App_Front-End/static/js/453.d12ec802.chunk.js",
+    "main.css": "/Store-App_Front-End/static/css/main.0e61f307.css",
+    "main.js": "/Store-App_Front-End/static/js/main.c4b68dde.js",
+    "static/js/453.11b4332d.chunk.js": "/Store-App_Front-End/static/js/453.11b4332d.chunk.js",
+    "static/media/bg-home1.jpeg": "/Store-App_Front-End/static/media/bg-home1.6fe7f02ff9d58f12b967.jpeg",
     "static/media/fa-solid-900.ttf": "/Store-App_Front-End/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
+    "static/media/image6.jpeg": "/Store-App_Front-End/static/media/image6.3066c207f6659a1a2fda.jpeg",
+    "static/media/donicci-logo.png": "/Store-App_Front-End/static/media/donicci-logo.ff7f2c44c75b53a0d225.png",
     "static/media/fa-brands-400.ttf": "/Store-App_Front-End/static/media/fa-brands-400.6205fd00fb1b573e9f0f.ttf",
     "static/media/fa-solid-900.woff2": "/Store-App_Front-End/static/media/fa-solid-900.fb8184add5a3101ad0a3.woff2",
+    "static/media/image7.png": "/Store-App_Front-End/static/media/image7.6ef9479647fccd19ea9a.png",
     "static/media/fa-brands-400.woff2": "/Store-App_Front-End/static/media/fa-brands-400.8d3cabfc66809162fb4d.woff2",
+    "static/media/Men-4-600x600.jpeg": "/Store-App_Front-End/static/media/Men-4-600x600.ed1fa6e0cd4621619212.jpeg",
+    "static/media/image2.jpeg": "/Store-App_Front-End/static/media/image2.ed1fa6e0cd4621619212.jpeg",
     "static/media/fa-regular-400.ttf": "/Store-App_Front-End/static/media/fa-regular-400.adc51aab4d771ab65f81.ttf",
+    "static/media/image4.jpeg": "/Store-App_Front-End/static/media/image4.a28f3973b5f03fd46f98.jpeg",
+    "static/media/slider3.jpeg": "/Store-App_Front-End/static/media/slider3.7b67f04a2dd8a130044f.jpeg",
+    "static/media/women-3.jpeg": "/Store-App_Front-End/static/media/women-3.7b67f04a2dd8a130044f.jpeg",
+    "static/media/bg-home.jpg": "/Store-App_Front-End/static/media/bg-home.2a27ca5c13af62a3c52f.jpg",
+    "static/media/image1.jpg": "/Store-App_Front-End/static/media/image1.94ea1e511078c3c96fa2.jpg",
+    "static/media/logo.png": "/Store-App_Front-End/static/media/logo.2f3bb41110c1d11be6a6.png",
+    "static/media/image3.jpeg": "/Store-App_Front-End/static/media/image3.0323c6b35a298f299d3e.jpeg",
+    "static/media/image5.jpg": "/Store-App_Front-End/static/media/image5.aab800c056803bb70192.jpg",
     "static/media/fa-regular-400.woff2": "/Store-App_Front-End/static/media/fa-regular-400.e931bc0d14f5bbb1da22.woff2",
+    "static/media/slider2.jpeg": "/Store-App_Front-End/static/media/slider2.df99bf8560611ca1d781.jpeg",
+    "static/media/slider5.jpeg": "/Store-App_Front-End/static/media/slider5.df99bf8560611ca1d781.jpeg",
+    "static/media/slider7.jpeg": "/Store-App_Front-End/static/media/slider7.4f850fdc7fbb6263f7c5.jpeg",
+    "static/media/slider6.jpeg": "/Store-App_Front-End/static/media/slider6.4b3c72b0e46b33609cc7.jpeg",
+    "static/media/slider9.jpeg": "/Store-App_Front-End/static/media/slider9.0b0d54881e8c7c0c4709.jpeg",
+    "static/media/Women-300x300.jpg": "/Store-App_Front-End/static/media/Women-300x300.ad6542af0feae224810b.jpg",
     "static/media/fa-v4compatibility.ttf": "/Store-App_Front-End/static/media/fa-v4compatibility.2eb7b3ef25042305f3ff.ttf",
     "static/media/fa-v4compatibility.woff2": "/Store-App_Front-End/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
     "static/media/slick.svg": "/Store-App_Front-End/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -16,12 +36,12 @@
     "static/media/slick.ttf": "/Store-App_Front-End/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Store-App_Front-End/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Store-App_Front-End/index.html",
-    "main.3a8a86e8.css.map": "/Store-App_Front-End/static/css/main.3a8a86e8.css.map",
-    "main.c44b95e7.js.map": "/Store-App_Front-End/static/js/main.c44b95e7.js.map",
-    "453.d12ec802.chunk.js.map": "/Store-App_Front-End/static/js/453.d12ec802.chunk.js.map"
+    "main.0e61f307.css.map": "/Store-App_Front-End/static/css/main.0e61f307.css.map",
+    "main.c4b68dde.js.map": "/Store-App_Front-End/static/js/main.c4b68dde.js.map",
+    "453.11b4332d.chunk.js.map": "/Store-App_Front-End/static/js/453.11b4332d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a8a86e8.css",
-    "static/js/main.c44b95e7.js"
+    "static/css/main.0e61f307.css",
+    "static/js/main.c4b68dde.js"
   ]
 }
