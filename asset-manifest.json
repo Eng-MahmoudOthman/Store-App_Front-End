@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Store-App_Front-End/static/css/main.0e61f307.css",
-    "main.js": "/Store-App_Front-End/static/js/main.c4b68dde.js",
+    "main.css": "/Store-App_Front-End/static/css/main.d14c8036.css",
+    "main.js": "/Store-App_Front-End/static/js/main.7f29c9e5.js",
     "static/js/453.11b4332d.chunk.js": "/Store-App_Front-End/static/js/453.11b4332d.chunk.js",
     "static/media/bg-home1.jpeg": "/Store-App_Front-End/static/media/bg-home1.6fe7f02ff9d58f12b967.jpeg",
     "static/media/fa-solid-900.ttf": "/Store-App_Front-End/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
@@ -25,6 +25,8 @@
     "static/media/fa-regular-400.woff2": "/Store-App_Front-End/static/media/fa-regular-400.e931bc0d14f5bbb1da22.woff2",
     "static/media/slider2.jpeg": "/Store-App_Front-End/static/media/slider2.df99bf8560611ca1d781.jpeg",
     "static/media/slider5.jpeg": "/Store-App_Front-End/static/media/slider5.df99bf8560611ca1d781.jpeg",
+    "static/media/slider8.jpeg": "/Store-App_Front-End/static/media/slider8.f1603cc43b3d40846671.jpeg",
+    "static/media/slider10.jpeg": "/Store-App_Front-End/static/media/slider10.41a2aeea529ebcef813c.jpeg",
     "static/media/slider7.jpeg": "/Store-App_Front-End/static/media/slider7.4f850fdc7fbb6263f7c5.jpeg",
     "static/media/slider6.jpeg": "/Store-App_Front-End/static/media/slider6.4b3c72b0e46b33609cc7.jpeg",
     "static/media/slider9.jpeg": "/Store-App_Front-End/static/media/slider9.0b0d54881e8c7c0c4709.jpeg",
@@ -36,12 +38,12 @@
     "static/media/slick.ttf": "/Store-App_Front-End/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Store-App_Front-End/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Store-App_Front-End/index.html",
-    "main.0e61f307.css.map": "/Store-App_Front-End/static/css/main.0e61f307.css.map",
-    "main.c4b68dde.js.map": "/Store-App_Front-End/static/js/main.c4b68dde.js.map",
+    "main.d14c8036.css.map": "/Store-App_Front-End/static/css/main.d14c8036.css.map",
+    "main.7f29c9e5.js.map": "/Store-App_Front-End/static/js/main.7f29c9e5.js.map",
     "453.11b4332d.chunk.js.map": "/Store-App_Front-End/static/js/453.11b4332d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e61f307.css",
-    "static/js/main.c4b68dde.js"
+    "static/css/main.d14c8036.css",
+    "static/js/main.7f29c9e5.js"
   ]
 }
