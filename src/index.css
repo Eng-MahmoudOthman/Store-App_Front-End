@@ -48,6 +48,30 @@
       background-color:var(--main-color) !important;
       color: white !important;
    }
+   .main-btn {
+      background: linear-gradient(-45deg , #ce6bec 20% , var(--main-color) 100%);
+      cursor:pointer;
+      color:#ffffff !important;
+      font-weight:bold;
+      font-size: 14px;
+      min-width: 140px;
+      padding:10px 20px !important;
+      border-radius: 3px ;
+      -webkit-border-radius: 3px ;
+      -moz-border-radius: 3px ;
+      -ms-border-radius: 3px ;
+      -o-border-radius: 3px ;
+   }
+   .btn-cart {
+      word-spacing: 4px;
+      font-size: 18px;
+      font-weight: normal;
+      padding: 6px 0px !important;
+      margin: 20px 0px 0px ;
+   }
+   .main-btn:hover {
+      background: linear-gradient(-45deg,  var(--main-color) 20% , #ce6bec 100%);
+   }
 
 /*&==========Ens Global Rules  ===========*/
 
@@ -82,32 +106,6 @@
    animation: fadeIn .5s infinite alternate;
 } */
 
-
-
-.main-btn {
-   background: linear-gradient(-45deg , #ce6bec 20% , var(--main-color) 100%);
-   cursor:pointer;
-   color:#ffffff !important;
-   font-weight:bold;
-   font-size: 14px;
-   min-width: 140px;
-   padding:10px 20px !important;
-   border-radius: 3px ;
-   -webkit-border-radius: 3px ;
-   -moz-border-radius: 3px ;
-   -ms-border-radius: 3px ;
-   -o-border-radius: 3px ;
-}
-.btn-cart {
-   word-spacing: 4px;
-   font-size: 18px;
-   font-weight: normal;
-   padding: 6px 0px !important;
-   margin: 20px 0px 0px ;
-}
-.main-btn:hover {
-   background: linear-gradient(-45deg,  var(--main-color) 20% , #ce6bec 100%);
-}
 
 
 
@@ -194,8 +192,35 @@
    }
 /*& ========== End  Slider Home Component ============ */
 
+
+
+
+
+
+
 /*& ========== Start jQuery Slider Home Men And Women And FeatureHome  Component ============ */
    .move {
       right: 0px !important;
    }
-/*& ========== End jQuery Slider Home Men And Women  Component ============ */
+/*& ========== End jQuery Slider Home Men And Women And FeatureHome  Component ============ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*& ========== Start Down Time Component ============ */
+.down_time_number_counter {
+   font-weight: 900;
+   margin-bottom: 0px;
+}
+/*& ========== End Down Time Component ============ */
+

@@ -1,31 +1,24 @@
 import React, { Fragment, useContext } from 'react'
-import { Link } from 'react-router-dom'
-import image1 from "../../Assets/images/Women-300x300.jpg"
-import ProductItem from '../ProductItem/ProductItem.jsx';
-import { ProductContext } from '../../Context/ProductContext.js';
+import { ProductContext } from '../../../Context/ProductContext.js';
+import ProductItem from '../../ProductItem/ProductItem.jsx';
+import { Link } from 'react-router-dom';
 
-
-
-
-
-
-export default function ManSocks() {
-   const {products} = useContext(ProductContext)
+export default function HalfMen() {
+   const {products} = useContext(ProductContext) ;
 
 
    const getData = (data)=>{
       console.log(data);
    }
-   
    return (
       <Fragment>
-         <div className="container_ManSocks">
-
+         <div className="container_halfMen">
             <nav aria-label="breadcrumb" className='d-flex justify-content-center align-items-center my-4 py-4 bg-body-secondary'>
                <ol className="breadcrumb    px-5 py-2 ">
                   <li className="breadcrumb-item"><Link className="text-primary" to="/">الرئيسية</Link></li>
                   <li className="breadcrumb-item"><Link className="text-primary" to="/shops">المتجر</Link></li>
-                  <li className="breadcrumb-item active" aria-current="page">رجالى</li>
+                  <li className="breadcrumb-item"><Link className="text-primary" to="/men-Socks">رجالي</Link></li>
+                  <li className="breadcrumb-item active" aria-current="page"> شراب هاف رجالى</li>
                </ol>
             </nav>
 
@@ -48,18 +41,6 @@ export default function ManSocks() {
                            <option value="ترتيب حسب: الأعلى سعراً للأدنى">ترتيب حسب: الأعلى سعراً للأدنى</option>
                         </datalist>
                      </form>
-                  {/* <div dir='rtl'>
-                     <input onChange={(e)=>getData(e.target.value)} className="form-control border-start-0 border-end-0 border-top-0 rounded-0" list="datalistOptions" id="exampleDataList" placeholder="الترتيب الافتراضي" />
-                     <datalist id="datalistOptions">
-                        <option selected>الترتيب الافتراضي</option>
-                        <option value="ترتيب حسب الشهرة">ترتيب حسب الشهرة</option>
-                        <option value="ترتيب حسب معدل التقييم">ترتيب حسب معدل التقييم</option>
-                        <option value="ترتيب حسب الأحدث">ترتيب حسب الأحدث</option>
-                        <option value="ترتيب حسب: الأدنى سعراً للأعلى">ترتيب حسب: الأدنى سعراً للأعلى</option>
-                        <option value="ترتيب حسب: الأعلى سعراً للأدنى">ترتيب حسب: الأعلى سعراً للأدنى</option>
-                     </datalist>
-                  </div> */}
-
                   </div>
 
                   <div className="col-6 col-md-9">
@@ -74,9 +55,7 @@ export default function ManSocks() {
                </div>
 
             </div>
-
          </div>
-
       </Fragment>
    )
 }

@@ -1,19 +1,17 @@
-import React, { Fragment, useState } from 'react';
-import "./RelatedProducts.css" ;
-
-import product1 from '../../Assets/images/slider1.jpg'
-
-
+import React, { Fragment, useContext, useState } from 'react';
+import "./ProductItem.css" ;
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../Context/CartContext.js';
 
-export default function RelatedProducts({product}) {
 
+
+
+export default function ProductItem({product}) {
+   const{addToCart} = useContext(CartContext) ;
    const [addWishList , setAddWishList] = useState(false) ;
 
 
-   function addToCart(id){
-      console.log( "Add To Cart" , id);
-   }
+
 
    function addToWishList(id){
       setAddWishList(!addWishList)
@@ -27,28 +25,25 @@ export default function RelatedProducts({product}) {
    }
 
 
-
    return (
       <Fragment>
-         <div className="col-lg-3 col-md-4 col-6">
             <div className='card border-0'>
                   <div className="position-relative">
-                     <Link to={`/productDetails/${product.price}`}>
+                     <Link to={`/productDetails/${product.id}`}>
                         <img src={product.image} className='w-100' height={230} alt="slider1" loading="lazy" />
                         <p className='my-1 text-black' dir='rtl'>{product.name}</p>
-                        <div className="d-flex justify-content-start align-items-center">
-                           <p className='text-body-secondary fw-bold mx-2' dir='rtl'>{product.price} جنيه </p>
+                        <div className="d-flex justify-content-evenly align-items-center">
                            <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
+                           <p className='text-body-secondary fw-bold mx-2' dir='rtl'>{product.price} جنيه </p>
                         </div>
                      </Link>
-                     <button onClick={()=>{addToCart(product.price)}} className='btn btn-cart main-btn w-100'>إضافة إلى السلة</button>
+                     <button onClick={()=>{addToCart(product.id)}} className='btn btn-cart main-btn w-100'>إضافة إلى السلة</button>
                      <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
-                     <button  onClick={()=>{addToWishList(product.price)}} className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'>
+                     <button  onClick={()=>{addToWishList(product.id)}} className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'>
                         {addWishList ? <i class="fa-solid fa-heart"></i> : <i class="fa-regular fa-heart"></i>}
                      </button>
                   </div>
             </div>
-         </div>
       </Fragment>
    )
 }

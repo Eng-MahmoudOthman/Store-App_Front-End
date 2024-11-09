@@ -1,20 +1,39 @@
-
-import axios from "axios";
-import { createContext , useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import { createContext , useState } from "react";
 
 
 
 
-export let CartContext = createContext();
-
+export const CartContext = createContext();
 
 export default function CartContextProvider(props){
+   const [countItem , setCountItem] = useState(0) ;
+
+
+
+   function addToCart(id){
+      console.log( "Add To Cart From Cart Context" , id);
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    // const [error , setError] = useState(null) ;
    // const [loading , setLoading] = useState(false)
    // const [cart , setCart] = useState([]) ;
-   // const [itemCount , setItemCount] = useState(0) ;
 
    // let header = {
    //    token:localStorage.getItem("token")  ,
@@ -88,22 +107,14 @@ export default function CartContextProvider(props){
    return (
       <>
          <CartContext.Provider 
-         value={{
-               // loading , 
-               // setLoading  , 
-               // error , 
-               // setError , 
-               // addTest , 
-               // removeTest , 
-               // getLoggedCart , 
-               // cart , 
-               // setCart , 
-               // itemCount , 
-               // setItemCount ,
-               // clearCart
+            value={{
+               countItem , 
+               setCountItem ,
+               addToCart
             }}>
             {props.children}
          </CartContext.Provider>
       </>
    )
 }
+

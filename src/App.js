@@ -18,8 +18,15 @@ import DiscoverOffers from './Components/DiscoverOffers/DiscoverOffers.jsx';
 import ManSocks from './Components/ManSocks/ManSocks.jsx';
 import WomenSocks from './Components/WomenSocks/WomenSocks.jsx';
 import ProductDetails from './Components/ProductDetails/ProductDetails.jsx';
-import { Switch } from 'antd';
-
+import AnkleMen from './Components/ManSocks/AnkleMen/AnkleMen.jsx';
+import LongMen from './Components/ManSocks/LongMen/LongMen.jsx';
+import InvisibleMen from './Components/ManSocks/InvisibleMen/InvisibleMen.jsx';
+import HalfMen from './Components/ManSocks/HalfMen/HalfMen.jsx';
+import AnkleWomen from './Components/WomenSocks/AnkleWomen/AnkleWomen.jsx';
+import InvisibleWomen from './Components/WomenSocks/InvisibleWomen/InvisibleWomen.jsx';
+import HalfWomen from './Components/WomenSocks/HalfWomen/HalfWomen.jsx';
+import LongWomen from './Components/WomenSocks/LongWomen/LongWomen.jsx';
+import Shops from './Components/Shops/Shops.jsx';
 
 
 
@@ -35,8 +42,19 @@ let routers = createHashRouter([
 		{path:"contact" , element:<Contact/>} , 
 		{path:"login" , element:<Login />} , 
 		{path:"register" , element:<Register/>} , 
-		{path:"manSocks" , element:<ManSocks/>} , 
-		{path:"womenSocks" , element:<WomenSocks/>} , 
+		{path:"men-Socks" , element:<ManSocks/>} , 
+		{path:"shops" , element:<Shops/>} , 
+			{path:"men-Socks/ankle" , element:<AnkleMen/>} , 
+			{path:"men-Socks/long-men" , element:<LongMen />} , 
+			{path:"men-Socks/half" , element:<HalfMen/>} ,
+			{path:"men-Socks/invisible" , element:<InvisibleMen/>} ,
+
+		{path:"women-Socks" , element:<WomenSocks/>} , 
+			{path:"women-Socks/ankle" , element:<AnkleWomen/>} , 
+			{path:"women-Socks/long-women" , element:<LongWomen />} , 
+			{path:"women-Socks/half" , element:<HalfWomen/>} ,
+			{path:"women-Socks/invisible" , element:<InvisibleWomen/>} ,
+
 		{path:"productDetails/:id" , element:<ProductDetails/>} , 
 		{path:"discoverOffers" , element:<DiscoverOffers/>} , 
 		{path:"forgetPassword/:id" , element:<ForgetPassword/>} , 
@@ -92,7 +110,6 @@ function App() {
 		<>
 			<RouterProvider router={routers} ></RouterProvider>
 			<Toaster/>
-			<Switch/>
 		</>
 	);
 }

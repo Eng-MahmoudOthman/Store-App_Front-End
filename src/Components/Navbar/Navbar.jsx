@@ -11,9 +11,11 @@ export default function Navbar(){
 
    return (
       <Fragment>
+
          <div className="nav-message bg-body-secondary">
             <p className="text-center  m-0 ">&#129395;  خصم 40% لفترة محدودة وخصم 100 جنيه للطلبات +999ج </p>
          </div>
+
          <div className="container_navbar sticky-top">
             <nav className="navbar navbar-expand-lg " >
                <div className="container">
@@ -77,27 +79,27 @@ export default function Navbar(){
                            </li>
 
                            <li className="nav-item women  position-relative">
-                              <NavLink className="nav-link " to="/"><i class="fa-solid fa-chevron-down"></i> حريمي</NavLink>
+                              <NavLink className="nav-link " to="/women-Socks"><i class="fa-solid fa-chevron-down"></i> حريمي</NavLink>
                               <div className="women_box position-absolute">
                                  <ul>
                                     <li>
-                                       <Link className="nav-link " to="/">شراب انكل رجالى</Link>
+                                       <Link className="nav-link " to="/women-Socks/ankle">شراب انكل حريمي</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/"> شراب طويل رجالى</Link>
+                                       <Link className="nav-link " to="/women-Socks/long-women"> شراب طويل حريمي</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/"> شراب هاف رجالى</Link>
+                                       <Link className="nav-link " to="/women-Socks/half"> شراب هاف حريمي</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/"> شراب غير ظاهر رجالى</Link>
+                                       <Link className="nav-link " to="/women-Socks/invisible"> شراب غير ظاهر حريمي</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/">الجميع</Link>
+                                       <Link className="nav-link " to="/women-Socks">الجميع</Link>
                                     </li>
 
                                  </ul>
@@ -105,27 +107,27 @@ export default function Navbar(){
                            </li>
 
                            <li className="nav-item men position-relative">
-                              <NavLink className="nav-link " to="/"><i class="fa-solid fa-chevron-down"></i> رجالي</NavLink>
+                              <NavLink className="nav-link " to="/men-Socks"><i class="fa-solid fa-chevron-down"></i> رجالي</NavLink>
                               <div className="men_box position-absolute">
                                  <ul>
                                     <li>
-                                       <Link className="nav-link " to="/">شراب انكل رجالى</Link>
+                                       <Link className="nav-link " to="men-Socks/ankle">شراب انكل رجالى</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/"> شراب طويل رجالى</Link>
+                                       <Link className="nav-link " to="men-Socks/long-men"> شراب طويل رجالى</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/"> شراب هاف رجالى</Link>
+                                       <Link className="nav-link " to="men-Socks/half"> شراب هاف رجالى</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/"> شراب غير ظاهر رجالى</Link>
+                                       <Link className="nav-link " to="men-Socks/invisible"> شراب غير ظاهر رجالى</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/">الجميع</Link>
+                                       <Link className="nav-link " to="/men-Socks">الجميع</Link>
                                     </li>
 
                                  </ul>
@@ -261,6 +263,7 @@ export default function Navbar(){
                </div>
             </nav>
          </div>
+
       </Fragment>
    )
 }

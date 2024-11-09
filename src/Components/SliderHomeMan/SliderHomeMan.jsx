@@ -1,20 +1,19 @@
-import React, { Fragment } from 'react' ;
+import React, { Fragment, useContext, useState } from 'react' ;
 import Slider from 'react-slick' ;
+import { Link } from 'react-router-dom';
+import { ProductContext } from '../../Context/ProductContext.js';
+import ProductItem from '../ProductItem/ProductItem.jsx';
+import $ from 'jquery';
 import "./sliderHomeMan.css" ;
 
-import slider1 from '../../Assets/images/slider1.jpg'
-import slider2 from '../../Assets/images/slider2.jpeg'
-import slider3 from '../../Assets/images/slider3.jpeg'
-import slider4 from '../../Assets/images/slider4.jpg'
-import slider5 from '../../Assets/images/slider5.jpeg'
-import slider6 from '../../Assets/images/slider6.jpeg'
-import slider7 from '../../Assets/images/slider7.jpeg'
-import slider8 from '../../Assets/images/slider9.jpeg'
-import { Link } from 'react-router-dom';
-import $ from 'jquery';
+
+
 
 
 export default function SliderHomeMan() {
+   const [countProduct , setCountProduct] = useState(Math.floor(Math.random()*5))
+
+   const {products} = useContext(ProductContext)
 
    //& jQuery Appear Elements :
    $(document).ready(function() {
@@ -51,6 +50,15 @@ export default function SliderHomeMan() {
       initialSlide: 0,
       responsive: [
       {
+         breakpoint: 1300,
+         settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+         }
+      },
+      {
          breakpoint: 1024,
          settings: {
             slidesToShow: 3,
@@ -60,7 +68,7 @@ export default function SliderHomeMan() {
          }
       },
       {
-         breakpoint: 600,
+         breakpoint: 800,
          settings: {
             slidesToShow: 2,
             slidesToScroll: 1,
@@ -68,15 +76,16 @@ export default function SliderHomeMan() {
          }
       },
       {
-         breakpoint: 480,
+         breakpoint: 500,
          settings: {
-            slidesToShow: 1,
+            slidesToShow: 2,
             slidesToScroll: 1
          }
       }
       ]
    };
-   
+
+
    return (
       <Fragment>
          <div className="container_sliderHomeMan" dir='rtl'> 
@@ -87,162 +96,10 @@ export default function SliderHomeMan() {
 
             <div className="slider-container my-5 mx-5" >
                <Slider {...settings}>
-                     <div>
-                        <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
-                           <div className="px-3 position-relative">
-                              <img src={slider1} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1 text-black ' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
-                              <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
-                              </div>
-                              <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
-                              <div className='position-absolute text-white div_sale' dir='rtl'>وفر  500%  </div>
-                              <button className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'><i class="fa-regular fa-heart"></i></button>
-                           </div>
-                        </Link>
-                     </div>
-
-
-                     <div>
-                        <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
-                           <div className="px-3 position-relative">
-                              <img src={slider1} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
-                              <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
-                              </div>
-                              <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
-                              <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
-                              <button className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'><i class="fa-regular fa-heart"></i></button>
-                           </div>
-                        </Link>
-                     </div>
-
-
-                     <div>
-                        <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
-                           <div className="px-3 position-relative">
-                              <img src={slider2} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
-                              <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
-                              </div>
-                              <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
-                              <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
-                              <button className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'><i class="fa-regular fa-heart"></i></button>
-                           </div>
-                        </Link>
-                     </div>
-
-
-                     <div>
-                        <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
-                           <div className="px-3 position-relative">
-                              <img src={slider3} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
-                              <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
-                              </div>
-                              <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
-                              <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
-                              <button className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'><i class="fa-regular fa-heart"></i></button>
-                           </div>
-                        </Link>
-                     </div>
-
-
-                     <div>
-                        <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
-                           <div className="px-3 position-relative">
-                              <img src={slider4} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
-                              <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
-                              </div>
-                              <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
-                              <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
-                              <button className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'><i class="fa-regular fa-heart"></i></button>
-                           </div>
-                        </Link>
-                     </div>
-
-
-                     <div>
-                        <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
-                           <div className="px-3 position-relative">
-                              <img src={slider5} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
-                              <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
-                              </div>
-                              <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
-                              <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
-                              <button className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'><i class="fa-regular fa-heart"></i></button>
-                           </div>
-                        </Link>
-                     </div>
-
-
-                     <div>
-                        <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
-                           <div className="px-3 position-relative">
-                              <img src={slider6} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
-                              <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
-                              </div>
-                              <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
-                              <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
-                              <button className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'><i class="fa-regular fa-heart"></i></button>
-                           </div>
-                        </Link>
-                     </div>
-
-
-                     <div>
-                        <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
-                           <div className="px-3 position-relative">
-                              <img src={slider7} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
-                              <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
-                              </div>
-                              <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
-                              <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
-                              <button className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'><i class="fa-regular fa-heart"></i></button>
-                           </div>
-                        </Link>
-                     </div>
-
-
-                     <div>
-                        <Link to={`productDetails/${"fsdfsdfsd898fsd89787d"}`}>
-                           <div className="px-3 position-relative">
-                              <img src={slider8} className='w-100' height={230} alt="slider1" loading="lazy" />
-                              <p className='my-1 text-black' dir='rtl'>مجموعة 6 شرابات غير ظاهرة كود 4</p>
-                              <div className="d-flex justify-content-evenly align-items-center">
-                                 <p className='text-body-secondary text-decoration-line-through fw-bold' dir='rtl'>4230 جنيه </p>
-                                 <p className='text-body-secondary fw-bold' dir='rtl'>1140 جنيه </p>
-                              </div>
-                              <button className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
-                              <div className='position-absolute text-white div_sale' dir='rtl'>وفر  50%  </div>
-                              <button className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'><i class="fa-regular fa-heart"></i></button>
-                           </div>
-                        </Link>
-                     </div>
+                  {products.slice(countProduct , countProduct + 8).map((ele)=>  <div className="px-3"> <ProductItem product={{...ele}}/></div>)}
                </Slider>
             </div>
          </div> 
       </Fragment>
    )
 }
-
-
