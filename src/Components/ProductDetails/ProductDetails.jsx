@@ -37,7 +37,7 @@ export default function ProductDetails() {
 
    
 	const getProductsByCategories = async() => {
-		await axios.get(`http://localhost:5000/api/v1/categories/${productCategory}/products`) 
+		await axios.get(`${process.env.BASE_URL}/api/v1/categories/${productCategory}/products`) 
 		.then((response)=> {
 			setProducts(response?.data.products) ;
 		})

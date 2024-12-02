@@ -11,7 +11,7 @@ export default function HalfWomen() {
 
 
    const getProducts =  (pageNumber , sort)=>{
-      return axios.get(`http://localhost:5000/api/v1/subCategories/half-women/products?sort=${sort}&page=${pageNumber}`) ;
+      return axios.get(`${process.env.BASE_URL}/api/v1/subCategories/half-women/products?sort=${sort}&page=${pageNumber}`) ;
    }
    
 
