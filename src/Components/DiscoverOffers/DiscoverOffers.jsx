@@ -23,10 +23,10 @@ export default function DiscoverOffers() {
          <div className="container_discoverOffers">
             <div>
                <nav aria-label="breadcrumb ">
-                  <ol class="breadcrumb bg-body-secondary  px-5 py-2 justify-content-center">
-                     <li class="breadcrumb-item"><Link class="text-primary" to="/">الرئيسية</Link></li>
-                     <li class="breadcrumb-item"><Link class="text-primary" to="/first_Page">المتجر</Link></li>
-                     <li class="breadcrumb-item active" aria-current="page">عروض اليوم</li>
+                  <ol className="breadcrumb bg-body-secondary  px-5 py-2 justify-content-center">
+                     <li className="breadcrumb-item"><Link className="text-primary mx-2" to="/">الرئيسية</Link></li>
+                     <li className="breadcrumb-item"><Link className="text-primary" to="/first_Page">المتجر</Link></li>
+                     <li className="breadcrumb-item active" aria-current="page">عروض اليوم</li>
                   </ol>
                </nav>
             </div>

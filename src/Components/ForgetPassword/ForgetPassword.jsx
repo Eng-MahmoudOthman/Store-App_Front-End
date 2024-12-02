@@ -13,13 +13,13 @@ export default function ForgetPassword() {
          </Helmet>
 
 
-         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+         <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Launch demo modal
          </button>
 
 
          <div>
-            div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"&gt;
+            {/* div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"&gt; */}
             <div className="modal-dialog">
                <div className="modal-content">
                   <div className="modal-header">

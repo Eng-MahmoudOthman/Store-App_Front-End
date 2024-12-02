@@ -10,11 +10,6 @@ import SliderHomeWomen from "../SliderHomeWomen/SliderHomeWomen.jsx";
 
 export default function Home (){
 
-
-
-
-
-
    return (
       <Fragment>
          <Helmet>

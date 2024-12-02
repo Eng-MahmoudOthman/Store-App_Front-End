@@ -87,7 +87,7 @@ export default function SliderHomeWomen() {
          <div className="container_sliderHomeWomen" dir='rtl'> 
             <div className="d-flex justify-content-between align-items-center">
                <h3 className='me-4 fw-bold head_women'>شرابات <span className='main-color'>حريمي</span>!</h3>
-               <Link to="womenSocks" className='btn_slider bg-transparent rounded-1 border border-1 border-black ms-4'>استكشف المزيد</Link>
+               <Link to="women-Socks" className='btn_slider bg-transparent rounded-1 border border-1 border-black ms-4'>استكشف المزيد</Link>
             </div>
 
             <div className="slider-container my-5 mx-5" >

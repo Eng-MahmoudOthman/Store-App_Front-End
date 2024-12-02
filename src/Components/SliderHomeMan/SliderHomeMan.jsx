@@ -91,7 +91,7 @@ export default function SliderHomeMan() {
          <div className="container_sliderHomeMan" dir='rtl'> 
             <div className="d-flex justify-content-between align-items-center">
                <h3 className='me-4 fw-bold head_men'>شرابات <span className='main-color'>رجالى</span>!</h3>
-               <Link to="manSocks" className='btn_slider bg-transparent rounded-1 border border-1 border-black ms-4'>استكشف المزيد</Link>
+               <Link to="men-Socks" className='btn_slider bg-transparent rounded-1 border border-1 border-black ms-4'>استكشف المزيد</Link>
             </div>
 
             <div className="slider-container my-5 mx-5" >

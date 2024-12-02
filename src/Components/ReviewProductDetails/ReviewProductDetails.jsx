@@ -6,11 +6,11 @@ import "./ReviewProductDetails.css" ;
 
 
 
-export default function ReviewProductDetails({id}) {
+export default function ReviewProductDetails({product}) {
 
 
    function submitReview(value){
-      value.id = id
+      value.id =  product._id
       value.user = "mahmoud Othman"
       console.log(value);
    }

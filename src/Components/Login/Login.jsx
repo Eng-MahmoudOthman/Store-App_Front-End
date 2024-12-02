@@ -140,7 +140,7 @@ export default function Login({socket}){
 
                <div className="d-grid gap-2 col-8 mx-auto">
                   {loading ? 
-                        <button className="btn bg-main text-white btn-sm mt-2"> <i class="fa-solid fa-spinner fa-spin fa-rotate-180 fa-xl"></i></button>
+                        <button className="btn bg-main text-white btn-sm mt-2"> <i className="fa-solid fa-spinner fa-spin fa-rotate-180 fa-xl"></i></button>
                      : 
                         <button disabled={!(formik.isValid && formik.dirty)} type="submit" className="btn bg-main text-white btn-sm mt-2">Login</button>
                   }

@@ -21,15 +21,15 @@ export default function Navbar(){
                <div className="container">
                   <div className="d-flex justify-content-between icon">
                      <span className="position-relative" >
-                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i className="fa-solid fa-cart-shopping"></i>
                         <span className="cardList ">0</span>
                      </span>
                      <span className="position-relative">
-                        <i class="fa-regular fa-heart"></i> 
+                        <i className="fa-regular fa-heart"></i> 
                         <span className="wishList ">0</span>
                      </span>
-                     <span ><i class="fa-regular fa-user "></i></span>
-                     <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                     <span ><i className="fa-regular fa-user "></i></span>
+                     <span><i className="fa-solid fa-magnifying-glass"></i></span>
                   </div>
 
                   <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -44,15 +44,15 @@ export default function Navbar(){
                         <ul className="navbar-nav justify-content-center flex-grow-1  pe-3">
 
                            <li className="nav-item">
-                              <NavLink className="nav-link active" aria-current="page" href="#">أحذية رجالى</NavLink>
+                              <NavLink className="nav-link active" aria-current="page" to="/menShoes">أحذية رجالى</NavLink>
                            </li>
 
                            <li className="nav-item">
-                              <NavLink className="nav-link" to="/">العروض</NavLink>
+                              <NavLink className="nav-link" to="/offers">العروض</NavLink>
                            </li>
 
                            <li className="nav-item child  position-relative">
-                              <NavLink className="nav-link " to="/"><i class="fa-solid fa-chevron-down"></i> اطفالى</NavLink>
+                              <NavLink className="nav-link " to="/"><i className="fa-solid fa-chevron-down"></i> اطفالى</NavLink>
                               <div className="child_box position-absolute">
                                  <ul>
                                     <li>
@@ -79,7 +79,7 @@ export default function Navbar(){
                            </li>
 
                            <li className="nav-item women  position-relative">
-                              <NavLink className="nav-link " to="/women-Socks"><i class="fa-solid fa-chevron-down"></i> حريمي</NavLink>
+                              <NavLink className="nav-link " to="/women-Socks"><i className="fa-solid fa-chevron-down"></i> حريمي</NavLink>
                               <div className="women_box position-absolute">
                                  <ul>
                                     <li>
@@ -107,7 +107,7 @@ export default function Navbar(){
                            </li>
 
                            <li className="nav-item men position-relative">
-                              <NavLink className="nav-link " to="/men-Socks"><i class="fa-solid fa-chevron-down"></i> رجالي</NavLink>
+                              <NavLink className="nav-link " to="/men-Socks"><i className="fa-solid fa-chevron-down"></i> رجالي</NavLink>
                               <div className="men_box position-absolute">
                                  <ul>
                                     <li>
@@ -267,256 +267,3 @@ export default function Navbar(){
       </Fragment>
    )
 }
-
-
-
-
-
-
-
-
-
-
-
-// import { Fragment } from "react" ;
-
-// import "./navbar.css"
-// import { Link, NavLink } from "react-router-dom";
-// import logo from "../../Assets/images/logo.png";
-
-// export default function Navbar(){
-
-
-
-
-//    return (
-//       <Fragment>
-//          <div className="nav-message ">
-//             <p className="text-center bg-body-secondary m-0">خصم 40% لفترة محدودة وخصم 100 جنيه للطلبات +999ج </p>
-//          </div>
-//          <div className="container_navbar sticky-top">
-//             <nav className="navbar navbar-expand-lg " >
-//                <div className="container">
-//                   <div className="d-flex justify-content-between icon">
-//                      <span className="position-relative" >
-//                         <i class="fa-solid fa-cart-shopping"></i>
-//                         <span className="cardList ">0</span>
-//                      </span>
-//                      <span className="position-relative">
-//                         <i class="fa-regular fa-heart"></i> 
-//                         <span className="wishList ">0</span>
-//                      </span>
-//                      <span ><i class="fa-regular fa-user "></i></span>
-//                      <span><i class="fa-solid fa-magnifying-glass"></i></span>
-//                   </div>
-
-//                   <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                     
-//                      <div className="offcanvas-header">
-//                         <a className="navbar-brand" to="/"><img src={logo} width="180" height="30" alt="logo" /></a>
-//                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
-//                      </div>
-
-//                      <div className="offcanvas-body">
-//                         <ul className="navbar-nav justify-content-center flex-grow-1  pe-3">
-//                            <li className="nav-item">
-//                               <NavLink className="nav-link active" aria-current="page" href="#">أحذية رجالى</NavLink>
-//                            </li>
-
-//                            <li className="nav-item">
-//                               <NavLink className="nav-link" to="/">العروض</NavLink>
-//                            </li>
-
-//                            <li className="nav-item child  position-relative">
-//                               <NavLink className="nav-link " to="/"><i class="fa-solid fa-chevron-down"></i> اطفالى</NavLink>
-//                               <div className="child_box position-absolute">
-//                                  <ul>
-//                                     <li>
-//                                        <Link className="nav-link " to="/">شراب انكل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب طويل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب هاف رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب غير ظاهر رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/">الجميع</Link>
-//                                     </li>
-//                                  </ul>
-//                               </div>
-//                            </li>
-
-//                            <li className="nav-item women  position-relative">
-//                               <NavLink className="nav-link " to="/"><i class="fa-solid fa-chevron-down"></i> حريمي</NavLink>
-//                               <div className="women_box position-absolute">
-//                                  <ul>
-//                                     <li>
-//                                        <Link className="nav-link " to="/">شراب انكل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب طويل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب هاف رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب غير ظاهر رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/">الجميع</Link>
-//                                     </li>
-
-//                                  </ul>
-//                               </div>
-//                            </li>
-
-//                            <li className="nav-item men position-relative">
-//                               <NavLink className="nav-link " to="/"><i class="fa-solid fa-chevron-down"></i> رجالي</NavLink>
-//                               <div className="men_box position-absolute">
-//                                  <ul>
-//                                     <li>
-//                                        <Link className="nav-link " to="/">شراب انكل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب طويل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب هاف رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب غير ظاهر رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/">الجميع</Link>
-//                                     </li>
-
-//                                  </ul>
-//                               </div>
-//                            </li>
-//                         </ul>
-//                         <Link className="navbar-brand logo_Navbar_lg" to="/"><img src={logo} width="180" height="30" alt="logo" /></Link>
-//                      </div>
-
-//                      <div className="sideBar d-none">
-//                         <ul className="navbar-nav justify-content-center flex-grow-1  pe-3">
-//                            <li className="nav-item">
-//                               <NavLink className="nav-link active" aria-current="page" href="#">أحذية رجالى</NavLink>
-//                            </li>
-
-//                            <li className="nav-item">
-//                               <NavLink className="nav-link" to="/">العروض</NavLink>
-//                            </li>
-
-//                            <li className="nav-item child  position-relative">
-//                               <NavLink className="nav-link " to="/"><i class="fa-solid fa-chevron-down"></i> اطفالى</NavLink>
-//                               <div className="child_box position-absolute">
-//                                  <ul>
-//                                     <li>
-//                                        <Link className="nav-link " to="/">شراب انكل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب طويل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب هاف رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب غير ظاهر رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/">الجميع</Link>
-//                                     </li>
-//                                  </ul>
-//                               </div>
-//                            </li>
-
-//                            <li className="nav-item women  position-relative">
-//                               <NavLink className="nav-link " to="/"><i class="fa-solid fa-chevron-down"></i> حريمي</NavLink>
-//                               <div className="women_box position-absolute">
-//                                  <ul>
-//                                     <li>
-//                                        <Link className="nav-link " to="/">شراب انكل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب طويل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب هاف رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب غير ظاهر رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/">الجميع</Link>
-//                                     </li>
-
-//                                  </ul>
-//                               </div>
-//                            </li>
-
-//                            <li className="nav-item men position-relative">
-//                               <NavLink className="nav-link " to="/"><i class="fa-solid fa-chevron-down"></i> رجالي</NavLink>
-//                               <div className="men_box position-absolute">
-//                                  <ul>
-//                                     <li>
-//                                        <Link className="nav-link " to="/">شراب انكل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب طويل رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب هاف رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/"> شراب غير ظاهر رجالى</Link>
-//                                     </li>
-
-//                                     <li>
-//                                        <Link className="nav-link " to="/">الجميع</Link>
-//                                     </li>
-
-//                                  </ul>
-//                               </div>
-//                            </li>
-//                         </ul>
-//                         <Link className="navbar-brand logo_Navbar_lg" to="/"><img src={logo} width="180" height="30" alt="logo" /></Link>
-//                      </div>
-
-//                   </div>
-
-//                   <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
-//                      <span className="navbar-toggler-icon" />
-//                   </button>
-//                </div>
-//             </nav>
-//          </div>
-//       </Fragment>
-//    )
-// }

@@ -27,8 +27,8 @@ export default function SignIn() {
                <button type="submit" className="btn btn-primary">Sign in</button>
             </form>
             <div className="dropdown-divider" />
-            <a className="dropdown-item" href="#">New around here? Sign up</a>
-            <a className="dropdown-item" href="#">Forgot password?</a>
+            <Link className="dropdown-item" to="/">New around here? Sign up</Link>
+            <Link className="dropdown-item" to="/">Forgot password?</Link>
          </div>
       </Fragment>
    )

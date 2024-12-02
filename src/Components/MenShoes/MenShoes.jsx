@@ -1,15 +1,11 @@
-import React , { Fragment, useState } from 'react' ;
-import axios from 'axios' ;
-import { Link } from 'react-router-dom' ;
-import { useQuery } from 'react-query' ;
-import ProductItem from '../ProductItem/ProductItem.jsx' ;
-import "./shops.css"
+import React, { Fragment, useContext, useState } from 'react'
+import { ProductContext } from '../../Context/ProductContext.js';
+import { Link } from 'react-router-dom';
+import ProductItem from '../ProductItem/ProductItem.jsx';
+import { useQuery } from 'react-query';
+import axios from 'axios';
 
-
-
-
-
-export default function Shops() {
+export default function MenShoes() {
 	const[pageNumber , setPageNumber] = useState(1);
 	const[sort , setSort] = useState("");
 
@@ -46,7 +42,8 @@ export default function Shops() {
 				<nav aria-label="breadcrumb" className='d-flex justify-content-center align-items-center my-4 py-4 bg-body-secondary'>
 					<ol className="breadcrumb    px-5 py-2 ">
 							<li className="breadcrumb-item"><Link className="text-primary mx-2" to="/">الرئيسية</Link></li>
-							<li className="breadcrumb-item active" aria-current="page">المتجر</li>
+							<li className="breadcrumb-item"><Link className="text-primary mx-2" to="/shops">المتجر</Link></li>
+							<li className="breadcrumb-item active" aria-current="page"> أحذية رجالى</li>
 					</ol>
 				</nav>
 
@@ -76,7 +73,9 @@ export default function Shops() {
 
 
 						<div className="col-6 col-md-8">
-							<h6 className='' dir='rtl'>عرض جميع النتائج <span className='main-color fw-bold d-inline-block me-2'>{data?.data.products?.length}</span></h6>
+							{/* <h6 className='' dir='rtl'>عرض جميع النتائج <span className='main-color fw-bold d-inline-block me-2'>{data?.data.products?.length}</span></h6> */}
+							<h6 className='' dir='rtl'>  عرض 1 – 40  من أصل  <span className='main-color fw-bold d-inline-block me-2 mx-1'> {data?.data.results}</span>   نتيجة  </h6>
+
 							{/* <h4>عرض النتيجة الوحيدة</h4> */}
 						</div>
 					</div>

@@ -12,9 +12,9 @@ export default function NotFound(){
          <div className="container_notFound">
             
             <nav aria-label="breadcrumb">
-               <ol class="breadcrumb  bg-body-secondary  px-5 py-2">
-                  <li class="breadcrumb-item"><Link class="text-primary" to="/">الرئيسية</Link></li>
-                  <li class="breadcrumb-item active" aria-current="page">الصفحة الحالية</li>
+               <ol className="breadcrumb  bg-body-secondary  px-5 py-2">
+                  <li className="breadcrumb-item"><Link className="text-primary" to="/">الرئيسية</Link></li>
+                  <li className="breadcrumb-item active" aria-current="page">الصفحة الحالية</li>
                </ol>
             </nav>
 

@@ -1,25 +1,23 @@
-import React , { Fragment, useState } from 'react' ;
-import axios from 'axios' ;
-import { Link } from 'react-router-dom' ;
-import { useQuery } from 'react-query' ;
-import ProductItem from '../ProductItem/ProductItem.jsx' ;
-import "./shops.css"
+import React, { Fragment, useContext, useState } from 'react'
+import { ProductContext } from '../../../Context/ProductContext.js';
+import { Link } from 'react-router-dom';
+import ProductItem from '../../ProductItem/ProductItem.jsx';
+import axios from 'axios';
+import { useQuery } from 'react-query';
 
 
 
-
-
-export default function Shops() {
-	const[pageNumber , setPageNumber] = useState(1);
+export default function InvisibleMen() {
+   const[pageNumber , setPageNumber] = useState(1);
 	const[sort , setSort] = useState("");
 
 
 	const getProducts =  (pageNumber , sort)=>{
-		return axios.get(`http://localhost:5000/api/v1/products/all?sort=${sort}&page=${pageNumber}`) ;
+		return axios.get(`http://localhost:5000/api/v1/subCategories/invisible-men/products?sort=${sort}&page=${pageNumber}`) ;
 	}
 	
 
-   const { error , data , isError , isLoading  , isFetching} = useQuery(["key_AllProducts" , pageNumber , sort] , ()=>getProducts(pageNumber , sort) , {
+   const { error , data , isError , isLoading  , isFetching} = useQuery(["products" , pageNumber , sort] , ()=>getProducts(pageNumber , sort) , {
 		// cacheTime:3000 , // cash Time
 		// refetchOnMount:false , // Prevent Refetch
 		// staleTime:30000 , // Show Time Old Data 
@@ -46,8 +44,10 @@ export default function Shops() {
 				<nav aria-label="breadcrumb" className='d-flex justify-content-center align-items-center my-4 py-4 bg-body-secondary'>
 					<ol className="breadcrumb    px-5 py-2 ">
 							<li className="breadcrumb-item"><Link className="text-primary mx-2" to="/">الرئيسية</Link></li>
-							<li className="breadcrumb-item active" aria-current="page">المتجر</li>
-					</ol>
+							<li className="breadcrumb-item"><Link className="text-primary mx-2" to="/shops">المتجر</Link></li>
+							<li className="breadcrumb-item"><Link className="text-primary mx-2" to="/men-Socks">رجالى</Link></li>
+                     <li className="breadcrumb-item active" aria-current="page"> شراب غير ظاهر رجالى</li>
+               </ol>
 				</nav>
 
 				<div className="container">
@@ -59,12 +59,12 @@ export default function Shops() {
 						<div className="col-6 col-md-4">
 							<form action="" dir='rtl' >
 								<select onChange={(e)=>getData(e.target.value)} id="selectData">
-									<option value="">الترتيب الافتراضي</option>
-										<option value="-quantity">ترتيب حسب الشهرة</option>
-										<option value="-rateAvg">ترتيب حسب معدل التقييم</option>
-										<option value="-createdTimeAt">ترتيب حسب الأحدث</option>
-										<option value="priceAfterDiscount">ترتيب حسب: الأدنى سعراً للأعلى</option>
-										<option value="-priceAfterDiscount">ترتيب حسب: الأعلى سعراً للأدنى</option>
+                           <option value="">الترتيب الافتراضي</option>
+                           <option value="-quantity">ترتيب حسب الشهرة</option>
+                           <option value="-rateAvg">ترتيب حسب معدل التقييم</option>
+                           <option value="-createdTimeAt">ترتيب حسب الأحدث</option>
+                           <option value="priceAfterDiscount">ترتيب حسب: الأدنى سعراً للأعلى</option>
+                           <option value="-priceAfterDiscount">ترتيب حسب: الأعلى سعراً للأدنى</option>
 								</select>
 							</form>
 						</div>
@@ -76,7 +76,9 @@ export default function Shops() {
 
 
 						<div className="col-6 col-md-8">
-							<h6 className='' dir='rtl'>عرض جميع النتائج <span className='main-color fw-bold d-inline-block me-2'>{data?.data.products?.length}</span></h6>
+							{/* <h6 className='' dir='rtl'>عرض جميع النتائج <span className='main-color fw-bold d-inline-block me-2'>{data?.data.products?.length}</span></h6> */}
+							<h6 className='' dir='rtl'>  عرض 1 – 40  من أصل  <span className='main-color fw-bold d-inline-block me-2 mx-1'> {data?.data.results}</span>   نتيجة  </h6>
+
 							{/* <h4>عرض النتيجة الوحيدة</h4> */}
 						</div>
 					</div>
@@ -101,5 +103,3 @@ export default function Shops() {
 		</Fragment>
 	)
 }
-
-

@@ -48,7 +48,7 @@ export default function FeaturedHome() {
                            <img src={image1} alt="product" className='w-100 rounded-circle border border-3 border-light-subtle p-1' />
                         </div>
                         <h5 className='text-center my-3'>أحذية رجالى</h5>
-                        <Link className='feature_link text-black text-center d-block ' to="/"> المزيد  <i class="fa-solid fa-arrow-left-long me-3"></i> </Link>
+                        <Link className='feature_link text-black text-center d-block ' to="/"> المزيد  <i className="fa-solid fa-arrow-left-long me-3"></i> </Link>
                      </div>
                   </div>
 
@@ -59,7 +59,7 @@ export default function FeaturedHome() {
                            <img src={image2} alt="product" className='w-100 rounded-circle border border-3 border-light-subtle p-1' />
                         </div>
                         <h5 className='text-center my-3'>رجالى</h5>
-                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد  <i class="fa-solid fa-arrow-left-long me-3"></i>  </Link>
+                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد  <i className="fa-solid fa-arrow-left-long me-3"></i>  </Link>
                      </div>
                   </div>
 
@@ -70,7 +70,7 @@ export default function FeaturedHome() {
                            <img src={image3} alt="product" className='w-100 rounded-circle border border-3 border-light-subtle p-1' />
                         </div>
                         <h5 className='text-center my-3'>شراب انكل رجالي</h5>
-                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد <i class="fa-solid fa-arrow-left-long me-3"></i>  </Link>
+                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد <i className="fa-solid fa-arrow-left-long me-3"></i>  </Link>
                      </div>
                   </div>
 
@@ -81,7 +81,7 @@ export default function FeaturedHome() {
                            <img src={image5} alt="product" className='w-100 rounded-circle border border-3 border-light-subtle p-1' />
                         </div>
                         <h5 className='text-center my-3'>شراب طويل رجالى</h5>
-                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد <i class="fa-solid fa-arrow-left-long me-3"></i>  </Link>
+                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد <i className="fa-solid fa-arrow-left-long me-3"></i>  </Link>
                      </div>
                   </div>
 
@@ -92,7 +92,7 @@ export default function FeaturedHome() {
                            <img src={image4} alt="product" className='w-100 rounded-circle border border-3 border-light-subtle p-1' />
                         </div>
                         <h5 className='text-center my-3'>حريمي</h5>
-                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد <i class="fa-solid fa-arrow-left-long me-3"></i>  </Link>
+                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد <i className="fa-solid fa-arrow-left-long me-3"></i>  </Link>
                      </div>
                   </div>
 
@@ -103,7 +103,7 @@ export default function FeaturedHome() {
                            <img src={image6} alt="product" className='w-100' />
                         </div>
                         <h5 className='text-center my-3'>اطفالى</h5>
-                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد <i class="fa-solid fa-arrow-left-long me-3"></i>  </Link>
+                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد <i className="fa-solid fa-arrow-left-long me-3"></i>  </Link>
                      </div>
                   </div>
 
@@ -114,7 +114,7 @@ export default function FeaturedHome() {
                            <img src={image7} alt="product" className='w-100 rounded-circle border border-3 border-light-subtle p-1' />
                         </div>
                         <h5 className='text-center my-3'>العروض</h5>
-                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد  <i class="fa-solid fa-arrow-left-long me-3"></i>  </Link>
+                        <Link className='feature_link text-black text-center d-block ' to="/">المزيد  <i className="fa-solid fa-arrow-left-long me-3"></i>  </Link>
                      </div>
                   </div>
 

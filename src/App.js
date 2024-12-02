@@ -1,5 +1,9 @@
-import { RouterProvider , createHashRouter } from 'react-router-dom';
+import { RouterProvider , createBrowserRouter, createHashRouter } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './App.css';
+
 import { Toaster } from 'react-hot-toast';
 // import { jwtDecode } from 'jwt-decode';
 import io from "../node_modules/socket.io/client-dist/socket.io.js"
@@ -15,18 +19,22 @@ import Contact from './Components/Contact/Contact.jsx';
 import UserProfile from './Components/UserProfile/UserProfile.jsx';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword.jsx';
 import DiscoverOffers from './Components/DiscoverOffers/DiscoverOffers.jsx';
-import ManSocks from './Components/ManSocks/ManSocks.jsx';
+import MenSocks from './Components/MenSocks/MenSocks.jsx';
 import WomenSocks from './Components/WomenSocks/WomenSocks.jsx';
 import ProductDetails from './Components/ProductDetails/ProductDetails.jsx';
-import AnkleMen from './Components/ManSocks/AnkleMen/AnkleMen.jsx';
-import LongMen from './Components/ManSocks/LongMen/LongMen.jsx';
-import InvisibleMen from './Components/ManSocks/InvisibleMen/InvisibleMen.jsx';
-import HalfMen from './Components/ManSocks/HalfMen/HalfMen.jsx';
+import AnkleMen from './Components/MenSocks/AnkleMen/AnkleMen.jsx';
+import LongMen from './Components/MenSocks/LongMen/LongMen.jsx';
+import InvisibleMen from './Components/MenSocks/InvisibleMen/InvisibleMen.jsx';
+import HalfMen from './Components/MenSocks/HalfMen/HalfMen.jsx';
 import AnkleWomen from './Components/WomenSocks/AnkleWomen/AnkleWomen.jsx';
 import InvisibleWomen from './Components/WomenSocks/InvisibleWomen/InvisibleWomen.jsx';
 import HalfWomen from './Components/WomenSocks/HalfWomen/HalfWomen.jsx';
 import LongWomen from './Components/WomenSocks/LongWomen/LongWomen.jsx';
 import Shops from './Components/Shops/Shops.jsx';
+import Offers from './Components/Offers/Offers.jsx';
+import MenShoes from './Components/MenShoes/MenShoes.jsx';
+
+
 
 
 
@@ -35,15 +43,17 @@ const socket = io(process.env.REACT_APP_BASE_URL) ;
 
 
 
-let routers = createHashRouter([
-// let routers = createBrowserRouter([
+// let routers = createHashRouter([
+let routers = createBrowserRouter([
 	{path:"" , element:<Layout socket={socket}/> , children:[
 		{index:true , element:<Home/>} , 
 		{path:"contact" , element:<Contact/>} , 
 		{path:"login" , element:<Login />} , 
 		{path:"register" , element:<Register/>} , 
-		{path:"men-Socks" , element:<ManSocks/>} , 
+		{path:"men-Socks" , element:<MenSocks/>} , 
 		{path:"shops" , element:<Shops/>} , 
+		{path:"offers" , element:<Offers/>} , 
+		{path:"menShoes" , element:<MenShoes/>} , 
 			{path:"men-Socks/ankle" , element:<AnkleMen/>} , 
 			{path:"men-Socks/long-men" , element:<LongMen />} , 
 			{path:"men-Socks/half" , element:<HalfMen/>} ,
@@ -55,7 +65,7 @@ let routers = createHashRouter([
 			{path:"women-Socks/half" , element:<HalfWomen/>} ,
 			{path:"women-Socks/invisible" , element:<InvisibleWomen/>} ,
 
-		{path:"productDetails/:id" , element:<ProductDetails/>} , 
+		{path:"productDetails/:productSlug" , element:<ProductDetails/>} , 
 		{path:"discoverOffers" , element:<DiscoverOffers/>} , 
 		{path:"forgetPassword/:id" , element:<ForgetPassword/>} , 
 		{path:"cart" , element:<ProtectedRoute><Cart/></ProtectedRoute>} , 
@@ -105,13 +115,17 @@ function App() {
    //    socket.emit("newUser" , {email: loggedUser.email , role:loggedUser.role})
    //    socket.emit("all-Notification")
    // }, [loggedUser])
+	
+
 
 	return (
 		<>
 			<RouterProvider router={routers} ></RouterProvider>
 			<Toaster/>
+			<ToastContainer />
 		</>
 	);
 }
 
 export default App;
+

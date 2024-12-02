@@ -31,8 +31,8 @@ export default function PrimaryHome() {
                         جواربنا المميزة مصنوعة من مواد عالية الجودة توفر أقصى درجات الراحة والمتانة.
                      </h4>
                      <div className='d-flex justify-content-center align-items-center mt-4'>
-                        <Link to="/manSocks" className='main-btn px-4 py-3 mx-1'>شراب رجالي</Link>
-                        <Link to="/womenSocks" className='main-btn  px-4 py-3 mx-1'>شراب حريمي</Link>
+                        <Link to="/men-Socks" className='main-btn px-4 py-3 mx-1'>شراب رجالي</Link>
+                        <Link to="/women-Socks" className='main-btn  px-4 py-3 mx-1'>شراب حريمي</Link>
                      </div>
                   </div>
 
