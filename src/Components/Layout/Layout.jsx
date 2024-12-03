@@ -17,11 +17,11 @@ export default function Layout({socket}){
             </div>
          </Offline>
 
-         <Online>
+         {/* <Online>
             <div className="network fixed-bottom text-success">
                <i className="fa-solid fa-wifi p-1 "></i> Online
             </div>
-         </Online>
+         </Online> */}
          
          <Footer/>
       </Fragment>
