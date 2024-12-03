@@ -43,8 +43,8 @@ const socket = io(process.env.REACT_APP_BASE_URL) ;
 
 
 
-// let routers = createHashRouter([
-let routers = createBrowserRouter([
+let routers = createHashRouter([
+// let routers = createBrowserRouter([
 	{path:"" , element:<Layout socket={socket}/> , children:[
 		{index:true , element:<Home/>} , 
 		{path:"contact" , element:<Contact/>} , 
