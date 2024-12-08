@@ -11,7 +11,7 @@ export default function LongMen() {
 
 
 	const getProducts =  (pageNumber , sort)=>{
-		return axios.get(`${process.env.BASE_URL}/api/v1/subCategories/long-men/products?sort=${sort}&page=${pageNumber}`) ;
+		return axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/subCategories/long-men/products?sort=${sort}&page=${pageNumber}`) ;
 	}
 	
 

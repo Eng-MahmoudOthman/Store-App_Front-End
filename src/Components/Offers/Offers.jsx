@@ -4,6 +4,13 @@ import ProductItem from '../ProductItem/ProductItem.jsx'
 import axios from 'axios';
 import { useEffect } from 'react';
 
+
+
+
+
+
+
+
 export default function Offers() {
    const[pageNumber , setPageNumber] = useState(1);
 	const[sort , setSort] = useState("");
@@ -12,20 +19,16 @@ export default function Offers() {
 	const [message , setMessage] = useState(false)
 
 
-
-
    const getData = async(query)=>{
 		setSort(query) ;
 		fetchData(true)
    }
 
-
-
 	const fetchData = async(flag) => {
 		if(flag) {
 			setData([])
 		}
-		await axios.get(`${process.env.BASE_URL}/api/v1/products/all?sort=${sort}&page=${pageNumber}`) 
+		await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/products/all?sort=${sort}&page=${pageNumber}`) 
 		.then((response)=> {
 			setData(prev => [...prev , ...response.data.products]) ;
 			setLoading(false)

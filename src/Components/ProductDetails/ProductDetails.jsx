@@ -21,7 +21,7 @@ export default function ProductDetails() {
 
 
 	const getSpecificProduct = async() => {
-		await axios.get(`http://localhost:5000/api/v1/products/${productSlug}`) 
+		await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/products/${productSlug}`) 
 		.then((response)=> {
          if(response?.data.message == "success"){
             setProductInfo(response?.data.product) ;
@@ -37,7 +37,7 @@ export default function ProductDetails() {
 
    
 	const getProductsByCategories = async() => {
-		await axios.get(`${process.env.BASE_URL}/api/v1/categories/${productCategory}/products`) 
+		await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/categories/${productCategory}/products`) 
 		.then((response)=> {
 			setProducts(response?.data.products) ;
 		})

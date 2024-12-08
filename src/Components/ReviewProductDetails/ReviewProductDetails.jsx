@@ -1,4 +1,4 @@
-import React from 'react' ;
+import React, { Fragment, useEffect, useState } from 'react' ;
 import { useFormik } from "formik" ;
 import * as Yup from 'yup';
 
@@ -8,13 +8,13 @@ import "./ReviewProductDetails.css" ;
 
 export default function ReviewProductDetails({product}) {
 
-
    function submitReview(value){
       value.id =  product._id
       value.user = "mahmoud Othman"
       console.log(value);
    }
 
+console.log(product);
 
 
    const validationSchema = Yup.object({
@@ -36,13 +36,13 @@ export default function ReviewProductDetails({product}) {
    })
 
 
-
    return (
+      <Fragment>
          <div className='review_Product_Details'>
             <nav>
                <div className="nav nav-tabs" id="nav-tab" role="tablist">
                   <button className="nav-link active " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected=" true"> الوصف</button>
-                  <button className="nav-link " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> مراجعات (1)</button>
+                  <button className="nav-link " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> مراجعات ({product.myReviews?.length || 0})</button>
                </div>
             </nav>
 
@@ -50,7 +50,21 @@ export default function ReviewProductDetails({product}) {
             <div className="tab-content" id="nav-tabContent">
                <div dir='rtl' className="tab-pane fade py-3 px-2" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabIndex={0}>
                   <h2>المراجعات</h2>
-                  <p className=' my-4'>لا توجد مراجعات بعد.</p>
+                     {product.myReviews?.length ? 
+                           product.myReviews.map((ele)=><>
+                              <div className='my-4'>
+                                 <div className=' bg-body-tertiary p-2 border-1 border-bottom my-2'>
+                                    <h6>{ele.user.name}</h6>
+                                    <div>
+                                       <p>Rating ★ : {ele.rate}</p>
+                                    </div>
+                                    <p>{ele.text}</p>
+                                 </div>
+                              </div>
+                           </>)
+                        : 
+                           <p className=' my-4'>لا توجد مراجعات بعد.</p> 
+                     }
                   <h5 className='fw-bold'>كن أول من يقيم “مجموعة 6 شرابات غير ظاهرة كود 4”</h5>
                   <p className='fst-italic text-black-50 fa-sm my-3'>لن يتم نشر عنوان بريدك الإلكتروني. الحقول الإلزامية مشار إليها بـ <span className='text-danger'>*</span></p>
 
@@ -166,5 +180,7 @@ export default function ReviewProductDetails({product}) {
                </div>
             </div>
          </div>
+      </Fragment>
+
    )
 }

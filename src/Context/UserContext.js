@@ -21,7 +21,8 @@ export default function UserContextProvider(props){
       <>
          <UserContext.Provider value={{
             // loggedUser , setLoggedUser , userToken , setUserToken , admin , setAdmin , moderator , setModerator  , error , setError , loading , setLoading
-             }}>
+            }}>
+               
             {props.children}
          </UserContext.Provider>
       </>

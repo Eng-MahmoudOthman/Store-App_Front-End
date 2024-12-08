@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet';
 import FeaturedHome from "../FeaturedHome/FeaturedHome.jsx";
 import PrimaryHome from "../PrimaryHome/PrimaryHome.jsx";
 import CounterHome from "../CounterHome/CounterHome.jsx";
-import SliderHomeMan from "../SliderHomeMan/SliderHomeMan.jsx";
 import SliderHomeWomen from "../SliderHomeWomen/SliderHomeWomen.jsx";
+import SliderHomeMen from "../SliderHomeMen/SliderHomeMen.jsx";
 
 
 
@@ -18,7 +18,7 @@ export default function Home (){
          
          <PrimaryHome/>
          <FeaturedHome/>
-         <SliderHomeMan/>
+         <SliderHomeMen/>
          <CounterHome/>
          <SliderHomeWomen/>
       </Fragment>

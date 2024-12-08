@@ -1,16 +1,34 @@
-import React, { Fragment, useContext, useState } from 'react' ;
+import React, { Fragment , useState } from 'react' ;
 import Slider from 'react-slick' ;
 import { Link } from 'react-router-dom';
-import { ProductContext } from '../../Context/ProductContext.js';
 import ProductItem from '../ProductItem/ProductItem.jsx';
 import $ from 'jquery';
+import axios from 'axios';
+import { useQuery } from 'react-query';
 import "./sliderHomeWomen.css" ;
 
 
 
 export default function SliderHomeWomen() {
    const [countProduct , setCountProduct] = useState(Math.floor(Math.random()*5))
-   const {products} = useContext(ProductContext)
+   const getProducts =  ()=>{
+		return axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/categories/women/products`) ;
+	}
+   const { error , data , isError , isLoading  , isFetching} = useQuery("menProducts" , getProducts , {
+		// cacheTime:3000 , // cash Time
+		// refetchOnMount:false , // Prevent Refetch
+		// staleTime:30000 , // Show Time Old Data 
+		// refetchInterval:3000 , // Every  3 seconde Time Request 
+		// enabled:true ,
+		keepPreviousData:true
+	});
+	if(isLoading){
+		return <h1>Loading...</h1>
+	}
+	if(isError){
+		return <h2>{error.message}</h2>
+	}
+
 
    //& jQuery Appear Elements :
    $(document).ready(function() {
@@ -92,7 +110,7 @@ export default function SliderHomeWomen() {
 
             <div className="slider-container my-5 mx-5" >
                <Slider {...settings}>
-                  {products.slice(countProduct , countProduct + 8).map((ele)=>  <div className="px-3"> <ProductItem product={{...ele}}/></div>)}
+                  {data?.data.products.slice(countProduct , countProduct + 8).map((ele)=>  <div className="px-3"> <ProductItem product={{...ele}}/></div>)}
                </Slider>
             </div>
          </div> 

@@ -13,11 +13,12 @@ export default function WomenSocks() {
 
 
    const getProducts =  (pageNumber , sort)=>{
-      return axios.get(`${process.env.BASE_URL}/api/v1/categories/women/products?sort=${sort}&page=${pageNumber}`) ;
+      return axios.get(`http://localhost:5000/api/v1/categories/women/products?sort=${sort}&page=${pageNumber}`) ;
+      // return axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/categories/women/products?sort=${sort}&page=${pageNumber}`) ;
    }
    
 
-   const { error , data , isError , isLoading  , isFetching} = useQuery(["products" , pageNumber , sort] , ()=>getProducts(pageNumber , sort) , {
+   const { error , data , isError , isLoading  , isFetching} = useQuery(["womenProducts" , pageNumber , sort] , ()=>getProducts(pageNumber , sort) , {
       // cacheTime:3000 , // cash Time
       // refetchOnMount:false , // Prevent Refetch
       // staleTime:30000 , // Show Time Old Data 

@@ -1,19 +1,36 @@
-import React, { Fragment, useContext, useState } from 'react' ;
+import React , { Fragment , useState } from 'react' ;
 import Slider from 'react-slick' ;
 import { Link } from 'react-router-dom';
-import { ProductContext } from '../../Context/ProductContext.js';
 import ProductItem from '../ProductItem/ProductItem.jsx';
 import $ from 'jquery';
-import "./sliderHomeMan.css" ;
+import axios from 'axios';
+import { useQuery } from 'react-query';
+import "./sliderHomeMen.css" ;
 
 
 
 
 
-export default function SliderHomeMan() {
+export default function SliderHomeMen() {
    const [countProduct , setCountProduct] = useState(Math.floor(Math.random()*5))
+	const getProducts =  ()=>{
+		return axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/categories/men/products`) ;
+	}
+   const { error , data , isError , isLoading  , isFetching} = useQuery("menProducts" , getProducts , {
+		// cacheTime:3000 , // cash Time
+		// refetchOnMount:false , // Prevent Refetch
+		// staleTime:30000 , // Show Time Old Data 
+		// refetchInterval:3000 , // Every  3 seconde Time Request 
+		// enabled:true ,
+		keepPreviousData:true
+	});
+	if(isLoading){
+		return <h1>Loading...</h1>
+	}
+	if(isError){
+		return <h2>{error.message}</h2>
+	}
 
-   const {products} = useContext(ProductContext)
 
    //& jQuery Appear Elements :
    $(document).ready(function() {
@@ -38,7 +55,6 @@ export default function SliderHomeMan() {
          }
       });
    });
-
 
    const settings = {
       dots: true,
@@ -85,7 +101,6 @@ export default function SliderHomeMan() {
       ]
    };
 
-
    return (
       <Fragment>
          <div className="container_sliderHomeMan" dir='rtl'> 
@@ -96,7 +111,7 @@ export default function SliderHomeMan() {
 
             <div className="slider-container my-5 mx-5" >
                <Slider {...settings}>
-                  {products.slice(countProduct , countProduct + 8).map((ele)=>  <div className="px-3"> <ProductItem product={{...ele}}/></div>)}
+                  {data?.data.products.slice(countProduct , countProduct + 8).map((ele)=>  <div className="px-3"> <ProductItem product={{...ele}}/></div>)}
                </Slider>
             </div>
          </div> 

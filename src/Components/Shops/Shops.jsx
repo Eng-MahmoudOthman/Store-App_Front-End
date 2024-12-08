@@ -15,7 +15,7 @@ export default function Shops() {
 
 
 	const getProducts =  (pageNumber , sort)=>{
-		return axios.get(`${process.env.BASE_URL}/api/v1/products/all?sort=${sort}&page=${pageNumber}`) ;
+		return axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/products/all?sort=${sort}&page=${pageNumber}`) ;
 	}
 	
 
