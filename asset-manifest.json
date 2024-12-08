@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Store-App_Front-End/static/css/main.2acd1866.css",
-    "main.js": "/Store-App_Front-End/static/js/main.f79f37a7.js",
+    "main.css": "/Store-App_Front-End/static/css/main.c7818d0b.css",
+    "main.js": "/Store-App_Front-End/static/js/main.0900cfee.js",
     "static/js/453.11b4332d.chunk.js": "/Store-App_Front-End/static/js/453.11b4332d.chunk.js",
     "static/media/bg-home1.jpeg": "/Store-App_Front-End/static/media/bg-home1.6fe7f02ff9d58f12b967.jpeg",
     "static/media/fa-solid-900.ttf": "/Store-App_Front-End/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
@@ -38,12 +38,12 @@
     "static/media/slick.ttf": "/Store-App_Front-End/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Store-App_Front-End/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Store-App_Front-End/index.html",
-    "main.2acd1866.css.map": "/Store-App_Front-End/static/css/main.2acd1866.css.map",
-    "main.f79f37a7.js.map": "/Store-App_Front-End/static/js/main.f79f37a7.js.map",
+    "main.c7818d0b.css.map": "/Store-App_Front-End/static/css/main.c7818d0b.css.map",
+    "main.0900cfee.js.map": "/Store-App_Front-End/static/js/main.0900cfee.js.map",
     "453.11b4332d.chunk.js.map": "/Store-App_Front-End/static/js/453.11b4332d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2acd1866.css",
-    "static/js/main.f79f37a7.js"
+    "static/css/main.c7818d0b.css",
+    "static/js/main.0900cfee.js"
   ]
 }
