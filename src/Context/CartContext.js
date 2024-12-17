@@ -13,8 +13,11 @@ export default function CartContextProvider(props){
 
    const[cart , setCart] = useState({}) ;
    const header = {
-      token:`${process.env.REACT_APP_SECRET_TOKEN} eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzAzYWI2NTg3YWQ4MmNmMjE5ZjY3YjYiLCJuYW1lIjoibWFobW91ZCBvc21hbiIsInBob25lIjoiMDExMjIyMjIzODgiLCJlbWFpbCI6Im1haG1vdWRfVXNlckBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTczNDA5Mzg5OX0.OHVCwM68QH36a9pGwQMoIi6qyf6xavNYK4swJgK_5Es`
+      token:`${process.env.REACT_APP_SECRET_TOKEN} eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzYxNmZiN2NkYmRlM2FiNmFhMTRmYWEiLCJuYW1lIjoibWFobW91ZCBvc21hbiBtYWhtb3VkIiwicGhvbmUiOiIwMTEyMjIyMjM4OCIsImVtYWlsIjoibWFobW91ZF9Vc2VyQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM0NDM4ODUwfQ.PlEgF38CMvuH-WDHlvbq9eMawNUoin5mEynK3yDH094`
    }
+   // const header = {
+   //    token:`${process.env.REACT_APP_SECRET_TOKEN} eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzAzYWI2NTg3YWQ4MmNmMjE5ZjY3YjYiLCJuYW1lIjoibWFobW91ZCBvc21hbiIsInBob25lIjoiMDExMjIyMjIzODgiLCJlbWFpbCI6Im1haG1vdWRfVXNlckBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTczNDA5Mzg5OX0.OHVCwM68QH36a9pGwQMoIi6qyf6xavNYK4swJgK_5Es`
+   // }
       // let header = {
    //    token:localStorage.getItem("token")  ,
    // };
