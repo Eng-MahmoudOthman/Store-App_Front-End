@@ -41,6 +41,22 @@ export default function Login({socket}){
    //          setLoading(false)
    //          //& save Token In Local Storage And Save Token in Use Context :
    //          toast.success("Success")
+      // const Toast = Swal.mixin({
+      //    toast: true,
+      //    position: "top-end",
+      //    showConfirmButton: false,
+      //    timer: 3000,
+      //    timerProgressBar: true,
+      //    didOpen: (toast) => {
+      //       toast.onmouseenter = Swal.stopTimer;
+      //       toast.onmouseleave = Swal.resumeTimer;
+      //    }
+      // });
+
+      // Toast.fire({
+      //    icon: "success",
+      //    title: "Signed in successfully"
+      // });
    //          localStorage.setItem("token" , data.token) ;
    //          localStorage.setItem("user" , JSON.stringify(data.user))
 
@@ -150,6 +166,9 @@ export default function Login({socket}){
             </form>
 
          </div> */}
+
+
+         <h1>Login</h1>
       </Fragment>
    )
 } 

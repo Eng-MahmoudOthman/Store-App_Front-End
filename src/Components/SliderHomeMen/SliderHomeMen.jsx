@@ -111,7 +111,7 @@ export default function SliderHomeMen() {
 
             <div className="slider-container my-5 mx-5" >
                <Slider {...settings}>
-                  {data?.data.products.slice(countProduct , countProduct + 8).map((ele)=>  <div className="px-3"> <ProductItem product={{...ele}}/></div>)}
+                  {data?.data.products.slice(countProduct , countProduct + 8).map((ele)=>  <div key={ele._id} className="px-3"> <ProductItem product={{...ele}}/></div>)}
                </Slider>
             </div>
          </div> 

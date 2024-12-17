@@ -1,4 +1,6 @@
-import { createContext , useState } from "react";
+import axios from "axios";
+import { createContext , useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 
 
@@ -6,111 +8,122 @@ import { createContext , useState } from "react";
 export const CartContext = createContext();
 
 export default function CartContextProvider(props){
-   const [countItem , setCountItem] = useState(0) ;
+   const[display , setDisplay] = useState(true) ;
+   const[loading , setLoading] = useState(false) ;
 
-
-
-   function addToCart(id){
-      console.log( "Add To Cart From Cart Context" , id);
+   const[cart , setCart] = useState({}) ;
+   const header = {
+      token:`${process.env.REACT_APP_SECRET_TOKEN} eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzAzYWI2NTg3YWQ4MmNmMjE5ZjY3YjYiLCJuYW1lIjoibWFobW91ZCBvc21hbiIsInBob25lIjoiMDExMjIyMjIzODgiLCJlbWFpbCI6Im1haG1vdWRfVXNlckBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTczNDA5Mzg5OX0.OHVCwM68QH36a9pGwQMoIi6qyf6xavNYK4swJgK_5Es`
    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   // const [error , setError] = useState(null) ;
-   // const [loading , setLoading] = useState(false)
-   // const [cart , setCart] = useState([]) ;
-
-   // let header = {
+      // let header = {
    //    token:localStorage.getItem("token")  ,
    // };
 
 
 
+   async function addToCart(id){
+      setLoading(true)
+      let response =  await axios.put(`${process.env.REACT_APP_BASE_URL}/api/v1/carts/add` , {product:id} , {headers:header} )
+      .catch((error)=>{
+         setLoading(false)
+         toast.error(error.response?.data.message , {
+            position: "top-right"
+         });
+         setDisplay(!display)
+      })
 
-   // async function addTest (test , company){
-   //    let response =   await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v1/cart` , {test_id:test ,company_id:company} ,  {headers:header} )
-   //    .catch((error)=>{
-   //       toast.error(error.response?.data.message)
-   //    })
-   //    if(response?.data.message === "success"){
-   //       getLoggedCart()
-   //       toast.success(`${response?.data.message }  Add Test in Cart`)
-   //    }
-   // }
+      if(response?.data.message === "Added Successfully"){
+         setLoading(false)
+         toast.success(response?.data.message , {
+            position: "top-right"
+         });
+         setCart(response.data.cart) ;
+         setDisplay(!display)
+      }
+   }
+
+   async function increaseItemCart(id){
+      setLoading(true)
+      let response =  await axios.put(`${process.env.REACT_APP_BASE_URL}/api/v1/carts?quantity=increase` , {product:id} , {headers:header} )
+      .catch((error)=>{
+         setLoading(false)
+         toast.error(error.response?.data.message , {
+            position: "top-left"
+         });
+      })
+      if(response?.data.message === "success"){
+         setLoading(false)
+         setCart(response.data.cart)
+      }
+   }
+
+   async function decreaseItemCart(id){
+      setLoading(true)
+      let response =  await axios.put(`${process.env.REACT_APP_BASE_URL}/api/v1/carts?quantity=decrease` , {product:id} , {headers:header} )
+      .catch((error)=>{
+         setLoading(false)
+         toast.error(error.response?.data.message , {
+            position: "top-left"
+         });
+      })
+      if(response?.data.message === "success"){
+         setLoading(false)
+         setCart(response.data.cart)
+      }
+   }
    
-   // async function removeTest(test){
-   //    let response =   await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/v1/cart/${test}` ,  {headers:header} )
-   //    .catch((error)=>{
-   //       setError(error.response?.data.message);
-   //       toast.error(error.response?.data.message)
-   //    })
-   //    if(response?.data.message === "success"){
-   //       getLoggedCart()
-   //       // toast.success(response?.data.message + "  " + "Remove Test in Cart") ;
-   //       toast.success( `${response?.data.message }  Remove Test in Cart` ,{
-   //          className:"toastAlert",
-   //          duration:2000 , 
-   //          position:'top-center'});
-   //    }
-   // }
+   async function removeItemFromCart(id){
+      setLoading(true)
+      let response =  await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/v1/carts/remove/${id}` , {headers:header} )
+      .catch((error)=>{
+         setLoading(false)
+         toast.error(error.response.data.message , {
+            position: "top-left"
+         });
+      })
+      if(response?.data.message === "Remove Successfully"){
+         setLoading(false)
+         toast.success(response?.data.message , {
+            position: "top-right"
+         });
+         setCart(response.data.cart)
+      }
+   }
    
-   // async function clearCart(){
-   //    let response =   await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/v1/cart` ,  {headers:header} )
-   //    .catch((error)=>{
-   //       setError(error.response?.data.message);
-   //       toast.error(error.response?.data.message)
-   //    })
-   //    if(response?.data.message === "success"){
-   //       getLoggedCart()
-   //       setItemCount(0)
-   //       toast.success(`${response?.data.message }  Clear Cart`) ;
-   //    }
-   // }
+   async function getLoggedCart(){
+      let response =  await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/carts` ,  {headers:header} )
+      .catch((error)=>{
+         toast.error(error.response?.data.message , {
+            position: "top-left"
+         });
+      })
 
-   // async function getLoggedCart(){
-   //    // let header = {
-   //    //    token:localStorage.getItem("token")  ,
-   //    // };
-   //    let response =  await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/cart/userCart` ,  {headers:{token:localStorage.getItem("token")}} )
-   //    .catch((error)=>{
-   //       setError(error.response?.data.message);
-   //    })
-
-   //    if(response?.data.message === "success"){
-   //       setError(null)
-   //       setCart(response?.data.cart)
-   //       setItemCount(response?.data.cart.cartItems.length)
-   //    }
-   // }
+      if(response?.data.message === "success"){
+         setCart(response.data.cart)
+      }
+   }
 
 
-   // useEffect(() => {
-   //    getLoggedCart()
-   // }, [])
+
+   useEffect(() => {
+      getLoggedCart()
+   }, [])
    
 
    return (
       <>
          <CartContext.Provider 
             value={{
-               countItem , 
-               setCountItem ,
-               addToCart
+               addToCart ,
+               increaseItemCart ,
+               decreaseItemCart , 
+               removeItemFromCart ,
+               display , 
+               setDisplay ,
+               getLoggedCart ,
+               cart , 
+               setCart ,
+               loading ,
             }}>
             {props.children}
          </CartContext.Provider>

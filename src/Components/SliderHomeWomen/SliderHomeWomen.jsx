@@ -14,7 +14,7 @@ export default function SliderHomeWomen() {
    const getProducts =  ()=>{
 		return axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/categories/women/products`) ;
 	}
-   const { error , data , isError , isLoading  , isFetching} = useQuery("menProducts" , getProducts , {
+   const { error , data , isError , isLoading } = useQuery("menProducts" , getProducts , {
 		// cacheTime:3000 , // cash Time
 		// refetchOnMount:false , // Prevent Refetch
 		// staleTime:30000 , // Show Time Old Data 
@@ -110,7 +110,7 @@ export default function SliderHomeWomen() {
 
             <div className="slider-container my-5 mx-5" >
                <Slider {...settings}>
-                  {data?.data.products.slice(countProduct , countProduct + 8).map((ele)=>  <div className="px-3"> <ProductItem product={{...ele}}/></div>)}
+                  {data?.data.products.slice(countProduct , countProduct + 8).map((ele)=>  <div  key={ele._id} className="px-3"> <ProductItem product={{...ele}}/></div>)}
                </Slider>
             </div>
          </div> 

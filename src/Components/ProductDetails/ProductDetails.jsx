@@ -73,7 +73,7 @@ export default function ProductDetails() {
             <h2 className='text-center mb-5 mt-2'>منتجات ذات صلة</h2>
             <div className='container'>
                <div className="row g-4 px-lg-5">
-                  {products.slice(Math.floor(Math.random() * ((products.length - 10 ) - 5) ) + 5).slice(0 , 4).map((ele)=> <div className="col-lg-3 col-md-4 col-6" key={ele._id}><ProductItem product={{...ele}}/></div>)}                  
+                  {products.slice(Math.floor(Math.random() * ((products.length - 10 ) - 5) ) + 5).slice(0 , 4).map((ele)=> <div className="col-lg-3 col-md-4 col-6" key={ele._id} dir='rtl'><ProductItem product={{...ele}}/></div>)}                  
                </div>
             </div>
          </div>

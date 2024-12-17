@@ -197,7 +197,6 @@
 
 
 
-
 /*& ========== Start jQuery Slider Home Men And Women And FeatureHome  Component ============ */
    .move {
       right: 0px !important;
@@ -211,7 +210,13 @@
 
 
 .network {
-   padding: 10px ;
+   background-color: #292929;
+   width: 100px;
+   border-radius: 5px;
+   padding: 2px;
+   text-align: center;
+   color: white !important;
+   margin: 16px 50%;
 }
 
 
@@ -251,3 +256,51 @@
    }
 } 
 /*& ========== End Show Item Component ============ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loader {
+   width: 30px;
+   height: 30px;
+   display: inline-block;
+   position: relative;
+   border: 3px solid;
+   border-color:#000000 #0000 #000000 #0000;
+   border-radius: 50%;
+   box-sizing: border-box;
+   animation: 1s rotate linear infinite;
+}
+.loader:before , .loader:after{
+   content: '';
+   top: 0;
+   left: 0;
+   position: absolute;
+   border: 6px solid transparent;
+   border-bottom-color: #000000;
+   transform: translate(-5px, 15px) rotate(-50deg);
+}
+ .loader:after {
+   border-color: #000000 #0000 #0000 #0000;
+   transform: translate(20px, 2px) rotate(-32deg);
+}
+  @keyframes rotate {
+   100%{    transform: rotate(360deg)}
+ }

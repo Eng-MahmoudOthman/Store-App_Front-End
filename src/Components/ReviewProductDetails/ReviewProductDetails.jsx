@@ -14,7 +14,7 @@ export default function ReviewProductDetails({product}) {
       console.log(value);
    }
 
-console.log(product);
+
 
 
    const validationSchema = Yup.object({

@@ -4,13 +4,11 @@ export default function useNetwork() {
 
    const [network , setNetwork] = useState(false) ;
 
-   useEffect(() => {
-      detectOnline()
-   }, [])
 
 
 
-   function detectOnline (){
+
+   const detectOnline = ()=>{
       window.addEventListener("online" , function (){
          setNetwork(true)
       })
@@ -19,10 +17,14 @@ export default function useNetwork() {
       })
    }
 
+
+   useEffect(() => {
+      detectOnline()
+   }, [])
    
    return (
       <>
-         {network? "" : <><div className="network fixed-bottom text-danger"><i className="fa-solid fa-wifi p-1 "></i> Network Offline</div></>}
+         {network? "" : <><div className="network fixed-bottom"><i className="fa-solid fa-wifi p-1 "></i> Network Offline</div></>}
       </>
    )
 }

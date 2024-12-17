@@ -2,15 +2,24 @@ import React, { Fragment, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext.js';
 import "./ProductItem.css" ;
+import LoadingBtn from '../LoadingBtn/LoadingBtn.jsx';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 
 
 export default function ProductItem({product}) {
    const{addToCart} = useContext(CartContext) ;
+   const [loading , setLoading] = useState(false) ;
    const [addWishList , setAddWishList] = useState(false) ;
 
 
+   const addItemToCart = async(id)=>{
+      setLoading(true)
+      await addToCart(id)
+      setLoading(false)
+   }
 
 
    function addToWishList(id){
@@ -37,7 +46,7 @@ export default function ProductItem({product}) {
                            <p className=' text-body-tertiary text-decoration-line-through fw-bold' dir='rtl'>{product.price} جنيه </p>
                         </div>
                      </Link>
-                     <button onClick={()=>{addToCart(product._id)}} className='btn btn-cart main-btn w-100'>إضافة إلى السلة</button>
+                     <button onClick={()=>{addItemToCart(product._id)}} disabled={loading} className='btn btn-cart main-btn w-100 position-relative '>اضافة الى السلة{loading? <LoadingBtn/> : ""}</button>
                      <div className='position-absolute text-white div_sale' dir='rtl'>وفر  {100-(product.priceAfterDiscount / product.price * 100).toFixed(0)} %  </div>
                      <button  onClick={()=>{addToWishList(product._id)}} className='border-0 position-absolute bg-white rounded-circle d-flex justify-content-center align-items-center wishList_icon'>
                         {addWishList ? <i className="fa-solid fa-heart"></i> : <i className="fa-regular fa-heart"></i>}

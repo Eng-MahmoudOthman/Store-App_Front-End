@@ -3,6 +3,7 @@ import Footer from "../Footer/Footer.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
 import { Offline, Online } from "react-detect-offline";
 import { Fragment } from "react";
+import Cart from "../Cart/Cart.jsx";
 
 export default function Layout({socket}){
    return (
@@ -10,7 +11,7 @@ export default function Layout({socket}){
          <Navbar/>
 
          <Outlet></Outlet>
-         
+
          <Offline>
             <div className="network fixed-bottom text-danger">
                <i className="fa-solid fa-wifi p-1 "></i> Offline
@@ -22,7 +23,10 @@ export default function Layout({socket}){
                <i className="fa-solid fa-wifi p-1 "></i> Online
             </div>
          </Online> */}
-         
+
+
+         <Cart/>
+
          <Footer/>
       </Fragment>
    )

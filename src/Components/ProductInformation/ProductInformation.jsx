@@ -1,21 +1,37 @@
-import React, { Fragment, useContext, useState } from 'react' ;
+import React, { Fragment , useContext , useEffect, useState } from 'react' ;
 import "./ProductInformation.css"
-import image1 from "../../Assets/images/Men-4-600x600.jpeg"
 import DownTime from '../DownTime/DownTime.jsx';
 import { CartContext } from '../../Context/CartContext.js';
-import { useQuery } from 'react-query';
-import axios from 'axios';
+import Loading from '../Loading/Loading.jsx';
+
 
 
 export default function ProductInformation({product}) {
 
-   const{countItem , setCountItem , addToCart} = useContext(CartContext) ;
+   const{addToCart , cart , getLoggedCart , increaseItemCart , decreaseItemCart , loading} = useContext(CartContext) ;
    const [addWishList , setAddWishList] = useState(false) ;
+   const [productItem, setProductItem] = useState({})
+   const [ alert , setAlert] = useState(false) ;
 
 
 
+   const increase = (id)=>{
+      if(productItem?.quantity >= product?.quantity){
+         setAlert(true)
+         return ;
+      }
+      increaseItemCart(id)
+   }
 
-   function addToWishList(id){
+   const decrease = (id)=>{
+      if(productItem?.quantity <= 1){
+         return ;
+      }
+      decreaseItemCart(id)
+      setAlert(false)
+   }
+
+   const addToWishList = (id)=>{
       setAddWishList(!addWishList)
       if(!addWishList){
          console.log(true);
@@ -27,6 +43,19 @@ export default function ProductInformation({product}) {
    }
 
 
+
+   
+   useEffect(() => {
+      const productObj = cart.cartItems?.find((ele)=>{
+         return ele.product?._id.toString() === product._id
+      })
+      setProductItem (productObj)
+   }, [cart , product])
+
+   useEffect(() => {
+      getLoggedCart()
+   }, [])
+
    return (
       <Fragment>
          <div className="row my-5 product_information">
@@ -34,7 +63,6 @@ export default function ProductInformation({product}) {
                <div className="m-2 position-relative">
                   <img src={product.imgCover?.secure_url} className='w-100' alt="product_image" />
                   <div className='position-absolute text-white div_sale' dir='rtl'>وفر  {100-(product.priceAfterDiscount / product.price * 100).toFixed(0)} %  </div>
-
                </div>
             </div>
 
@@ -46,22 +74,28 @@ export default function ProductInformation({product}) {
                </div>
 
                <div className='row justify-content-center align-items-center mt-4 g-2'>
-                  <div className='col-3'>
+                  <div className='col-3 position-relative'>
                      <div className='btn_quantity d-flex justify-content-between align-items-center p-0 border border-1'>
                         <span>
-                           <button onClick={()=>{setCountItem(countItem + 1)}} className='btn'>+</button>
+                           <button onClick={()=>{increase(product._id)}} className='btn'>+</button>
                         </span>
-                        <span>{countItem < 0 ? setCountItem(0) : countItem}</span>
+                        <span>{productItem?.quantity || 1}</span>
                         <span>
-                           <button onClick={()=>{setCountItem(countItem - 1)}} className='btn'>-</button>
+                           <button onClick={()=>{decrease(product._id)}} className='btn'>-</button>
                         </span>
                      </div>
+                     {/* {loading ? <Loading/> : ""} */}
                   </div>
                   <div className="col-9">
                      <div className='text-start'>
                         <button onClick={()=>{addToCart(product._id)}} className='btn btn-cart main-btn btn-discovery w-100'>إضافة إلى السلة</button>
                      </div>
                   </div>
+               </div>
+
+
+               <div>
+                  {alert ? <p className=' alert alert-danger text-center p-0 my-2 rounded-0'>أنتبه !!  لا يوجد مخزون أكثر من ذلك لهذا المنتج </p> : ""}
                </div>
 
                <div className='my-4 text_alarm '>
@@ -113,6 +147,8 @@ export default function ProductInformation({product}) {
                   </button>
                </div>
             </div>
+
+            {loading ? <Loading/> : ""}
          </div>
       </Fragment>
    )

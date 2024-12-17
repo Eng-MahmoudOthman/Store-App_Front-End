@@ -1,13 +1,18 @@
-import { Fragment } from "react" ;
+import { Fragment, useContext } from "react" ;
 
 import "./navbar.css"
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../Assets/images/logo.png";
+import { CartContext } from "../../Context/CartContext.js";
+
 
 export default function Navbar(){
 
-
-
+   const {cart , display , setDisplay , getLoggedCart} = useContext(CartContext) ;
+   const displayCart = ()=>{
+      getLoggedCart() ;
+      setDisplay(!display) ;
+   }
 
    return (
       <Fragment>
@@ -20,9 +25,9 @@ export default function Navbar(){
             <nav className="navbar navbar-expand-lg " >
                <div className="container">
                   <div className="d-flex justify-content-between icon">
-                     <span className="position-relative" >
+                     <span onClick={()=>displayCart()} className="position-relative btn p-0 m-0" >
                         <i className="fa-solid fa-cart-shopping"></i>
-                        <span className="cardList ">0</span>
+                        <span className="cardList">{cart.cartItems?.length || 0}</span>
                      </span>
                      <span className="position-relative">
                         <i className="fa-regular fa-heart"></i> 

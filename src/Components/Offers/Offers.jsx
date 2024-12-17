@@ -30,11 +30,11 @@ export default function Offers() {
 		}
 		await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/products/all?sort=${sort}&page=${pageNumber}`) 
 		.then((response)=> {
-			setData(prev => [...prev , ...response.data.products]) ;
+			setData(prev => [...prev , ...response?.data.products]) ;
 			setLoading(false)
 		})
 		.catch((error)=>{
-			if(error.response.data.message == "Products is Empty"){
+			if(error.response?.data.message == "Products is Empty"){
 				setMessage(true)
 			}
 			// console.log(error.response.data.message);
@@ -102,7 +102,7 @@ export default function Offers() {
 
 
 						<div className="col-6 col-md-8">
-							<h6 className='' dir='rtl'>عرض جميع النتائج <span className='main-color fw-bold d-inline-block me-2'>{data.length}</span></h6>
+							<h6 className='' dir='rtl'>عرض جميع النتائج <span className='main-color fw-bold d-inline-block me-2'>{data?.length}</span></h6>
 							{/* <h4>عرض النتيجة الوحيدة</h4> */}
 						</div>
 					</div>
