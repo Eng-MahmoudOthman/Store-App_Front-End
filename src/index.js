@@ -14,6 +14,7 @@ import UserContextProvider from './Context/UserContext.js';
 import ProductsContextProvider from './Context/ProductContext.js';
 import CartContextProvider from './Context/CartContext.js';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import WishListContextProvider from './Context/WishListContext.js';
 
 
 
@@ -26,7 +27,9 @@ root.render(
 			<UserContextProvider>
 				<ProductsContextProvider>
 					<CartContextProvider>
-						<App />
+						<WishListContextProvider>
+							<App />
+						</WishListContextProvider>
 					</CartContextProvider>
 				</ProductsContextProvider>
 			</UserContextProvider>

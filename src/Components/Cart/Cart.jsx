@@ -1,8 +1,9 @@
-import React , { Fragment, useContext } from 'react';
+import React , { Fragment, useContext, useEffect } from 'react';
 import { CartContext } from '../../Context/CartContext.js';
 import CartItem from '../CartItem/CartItem.jsx';
 import './Cart.css'
 import Loading from '../Loading/Loading.jsx';
+import { useState } from 'react';
 
 
 
@@ -12,6 +13,17 @@ import Loading from '../Loading/Loading.jsx';
 export default function Cart() {
 
    const {cart , display , setDisplay , loading} = useContext(CartContext) ;
+	const[discount , setDiscount] = useState(false) ;
+	const[delivery , setDelivery] = useState(false) ;
+
+
+	useEffect(() => {
+		if(cart.total_Price_After_Discount?.Total > 1000 && cart.total_Price_After_Discount?.Total < 5000){
+			setDelivery(true)
+		}else if(cart.total_Price_After_Discount?.Total > 5000 ){
+			setDiscount(true)
+		}
+	}, [])
 
 	return (
 		<Fragment>
@@ -36,14 +48,21 @@ export default function Cart() {
 								<div className='d-flex justify-content-between align-items-center px-5 border-top pt-2'>
 
 									<div className=''>
-										<h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount?.Total},00 جنيه </h6>
-										<h6 className='text-start fw-bold m-0 p-0 text-danger' dir='rtl'>60,00 جنيه </h6>
-										<h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount?.Total? cart.total_Price_After_Discount?.Total + 60 +",00" : cart.total_Price_After_Discount?.Total}  جنيه </h6>
+										<h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount?.total_before_discount},00 جنيه </h6>
+										{cart.total_Price_After_Discount.delivery?<h6 className='text-start fw-bold m-0 p-0 text-success' dir='rtl'>مجانا</h6>:<h6 className='text-start fw-bold m-0 p-0 text-danger' dir='rtl'>60,00 جنيه </h6>}
+										{cart.total_Price_After_Discount.discount? <h6 className='text-start fw-bold m-0 p-0 text-success' dir='rtl'>200,00 جنيه </h6> : ""}
+										{cart.total_Price_After_Discount?.discount_Amount? <h6 className='text-start fw-bold m-0 p-0 text-success' dir='rtl'>{cart.coupon_id.code}</h6> : ""}
+										{cart.total_Price_After_Discount?.discount_Amount? <h6 className='text-start fw-bold m-0 p-0 text-success' dir='rtl'>{cart.total_Price_After_Discount?.discount_Amount},00 جنيه  </h6> : ""}
+										<h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount.delivery ? cart.total_Price_After_Discount?.Total +",00" : cart.total_Price_After_Discount?.Total + 60 +",00"}  جنيه </h6>
+										{/* <h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount?.Total? cart.total_Price_After_Discount?.Total + 60 +",00" : cart.total_Price_After_Discount?.Total}  جنيه </h6> */}
 									</div>
-	
+
 									<div className=''>
 										<h6 className='text-end fw-bold m-0 p-0'>المجموع</h6>
 										<h6 className='text-end fw-bold m-0 p-0 text-danger '>الشحن</h6>
+										{cart.total_Price_After_Discount.discount?<h6 className='text-end fw-bold m-0 p-0 text-success '>الخصم لزيادة قيمة الطلب عن 5000</h6>:""}
+										{cart.total_Price_After_Discount?.discount_Amount? <h6 className='text-end fw-bold m-0 p-0 text-success '>الكوبون</h6>:""}
+										{cart.total_Price_After_Discount?.discount_Amount? <h6 className='text-end fw-bold m-0 p-0 text-success '>قيمة خصم الكوبون</h6>:""}
 										<h6 className='text-end fw-bold m-0 p-0'>الأجمالى</h6>
 									</div>
 								</div>

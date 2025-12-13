@@ -4,7 +4,8 @@ import { CartContext } from '../../Context/CartContext.js';
 import "./ProductItem.css" ;
 import LoadingBtn from '../LoadingBtn/LoadingBtn.jsx';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { WishListContext } from '../../Context/WishListContext.js';
+// import { toast } from 'react-toastify';
 
 
 
@@ -13,7 +14,13 @@ export default function ProductItem({product}) {
    const{addToCart} = useContext(CartContext) ;
    const [loading , setLoading] = useState(false) ;
    const [addWishList , setAddWishList] = useState(false) ;
+   const {wishList , updateWishList , displayWishList , setDisplayWishList} = useContext(WishListContext) ;
 
+
+   
+   const header = {
+      token:`${process.env.REACT_APP_SECRET_TOKEN} eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2E3MWQ0MTEyYWE2NTNkYmQzMDI1NTAiLCJuYW1lIjoibWFobW91ZCBvc21hbiBtYWhtb3VkIiwicGhvbmUiOiIwMTEyMjIyMjM4OCIsImVtYWlsIjoibWFobW91ZEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTczOTAwNTI4OH0.SfLBJ_ld5bTcUzcT6RRa4CajI_xW5UuCJaZFaFOQOoE`
+   }
 
    const addItemToCart = async(id)=>{
       setLoading(true)
@@ -23,16 +30,16 @@ export default function ProductItem({product}) {
 
 
    function addToWishList(id){
-      setAddWishList(!addWishList)
-      if(!addWishList){
-         console.log(true);
-         console.log( "Add To WishList" , id);
-      }else{
-         console.log(false);
-         console.log( "Remove To WishList" , id);
-      }
+      // setAddWishList(!addWishList)
+      // if(!addWishList){
+      //    console.log(true);
+      //    console.log( "Add To WishList" , id);
+      // }else{
+      //    console.log(false);
+      //    console.log( "Remove To WishList" , id);
+      // }
+      updateWishList(id)
    }
-
 
    return (
       <Fragment>

@@ -1,5 +1,5 @@
-import { RouterProvider , createBrowserRouter, createHashRouter } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { RouterProvider , createBrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';

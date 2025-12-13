@@ -24,7 +24,13 @@ export default function useNetwork() {
    
    return (
       <>
-         {network? "" : <><div className="network fixed-bottom"><i className="fa-solid fa-wifi p-1 "></i> Network Offline</div></>}
+         {network? "" : 
+         <>
+            <div className="network fixed-bottom">
+               <h3 className='fw-bold mt-3'><i className="fa-solid fa-wifi p-1 d-inline-block me-2"></i>No Internet Connection</h3>
+               <p className='fa-2xs'>Check your connection, then refresh the page.</p>
+            </div>
+         </>}
       </>
    )
 }

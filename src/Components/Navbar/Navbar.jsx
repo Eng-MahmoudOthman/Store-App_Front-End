@@ -1,17 +1,23 @@
 import { Fragment, useContext } from "react" ;
-
 import "./navbar.css"
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../Assets/images/logo.png";
 import { CartContext } from "../../Context/CartContext.js";
+import { WishListContext } from "../../Context/WishListContext.js";
 
 
 export default function Navbar(){
+   const {cart , display , setDisplay} = useContext(CartContext) ;
+   const {wishList , displayWishList , setDisplayWishList} = useContext(WishListContext) ;
 
-   const {cart , display , setDisplay , getLoggedCart} = useContext(CartContext) ;
    const displayCart = ()=>{
-      getLoggedCart() ;
+      // getLoggedCart() ;
       setDisplay(!display) ;
+   }
+
+   const displayWishListHome = ()=>{
+      setDisplayWishList(!displayWishList) ;
+      console.log("Display WishList");
    }
 
    return (
@@ -29,9 +35,10 @@ export default function Navbar(){
                         <i className="fa-solid fa-cart-shopping"></i>
                         <span className="cardList">{cart.cartItems?.length || 0}</span>
                      </span>
-                     <span className="position-relative">
+                     <span onClick={()=>displayWishListHome()} className="position-relative btn p-0 m-0">
                         <i className="fa-regular fa-heart"></i> 
-                        <span className="wishList ">0</span>
+                        {/* <span className="wishList ">0</span> */}
+                        <span className="wishList ">{wishList?.length || 0}</span>
                      </span>
                      <span ><i className="fa-regular fa-user "></i></span>
                      <span><i className="fa-solid fa-magnifying-glass"></i></span>
@@ -61,19 +68,19 @@ export default function Navbar(){
                               <div className="child_box position-absolute">
                                  <ul>
                                     <li>
-                                       <Link className="nav-link " to="/">شراب انكل رجالى</Link>
+                                       <Link className="nav-link " to="/">شراب انكل اطفالى</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/"> شراب طويل رجالى</Link>
+                                       <Link className="nav-link " to="/"> شراب طويل اطفالى</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/"> شراب هاف رجالى</Link>
+                                       <Link className="nav-link " to="/"> شراب هاف اطفالى</Link>
                                     </li>
 
                                     <li>
-                                       <Link className="nav-link " to="/"> شراب غير ظاهر رجالى</Link>
+                                       <Link className="nav-link " to="/"> شراب غير ظاهر اطفالى</Link>
                                     </li>
 
                                     <li>
@@ -157,11 +164,41 @@ export default function Navbar(){
 
                                     <div className="accordion-body ">
                                        <ul className="sidBar_link overflow-auto">
-                                          <li><Link className="dropdown-item" to="/">شراب انكل رجالى</Link></li>
-                                          <li><Link className="dropdown-item" to="/"> شراب طويل رجالى</Link></li>
-                                          <li><Link className="dropdown-item" to="/"> شراب طويل رجالى</Link></li>
-                                          <li><Link className="dropdown-item" to="/"> شراب غير ظاهر رجالى</Link></li>
-                                          <li><Link className="dropdown-item" to="/">الجميع</Link></li>
+                                       
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/men-Socks/ankle" >شراب انكل رجالى</Link>
+                                             </button>
+                                          </li>
+
+                                          
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/men-Socks/long-men"> شراب طويل رجالى</Link>
+                                             </button>
+                                          </li>
+
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/men-Socks/half"> شراب هاف رجالى</Link>
+                                             </button>
+                                          </li>
+
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/men-Socks/invisible"> شراب غير ظاهر رجالى</Link>
+                                             </button>
+                                          </li>
+
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/men-Socks">الجميع</Link>
+                                             </button>
+                                          </li>
+                                          
                                        </ul>
                                     </div>
 
@@ -184,11 +221,36 @@ export default function Navbar(){
 
                                     <div className="accordion-body">
                                        <ul className="sidBar_link overflow-auto">
-                                          <li><Link className="dropdown-item" to="/">شراب انكل حريمي</Link></li>
-                                          <li><Link className="dropdown-item" to="/"> شراب طويل حريمي</Link></li>
-                                          <li><Link className="dropdown-item" to="/"> شراب هاف حريمي</Link></li>
-                                          <li><Link className="dropdown-item" to="/"> شراب غير ظاهر حريمي</Link></li>
-                                          <li><Link className="dropdown-item" to="/">الجميع</Link></li>
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/women-Socks/ankle">شراب انكل حريمي</Link>
+                                             </button>
+                                          </li>
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/women-Socks/long-women"> شراب طويل حريمي</Link>
+                                             </button>
+                                          </li>
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/women-Socks/half"> شراب هاف حريمي</Link>
+                                             </button>
+                                          </li>
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/women-Socks/invisible"> شراب غير ظاهر حريمي</Link>
+                                             </button>
+                                          </li>
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/women-Socks">الجميع</Link>
+                                             </button>
+                                          </li>
                                        </ul>
                                     </div>
 
@@ -211,13 +273,55 @@ export default function Navbar(){
 
                                     <div className="accordion-body">
                                        <ul className="sidBar_link overflow-auto">
-                                          <li><Link className="dropdown-item" to="/">اطفال اولادى (من ٢ سنة ل ٤ سنين)</Link></li>
-                                          <li><Link className="dropdown-item" to="/">اطفال بناتى (من ٢ سنة ل ٤ سنين)</Link></li>
-                                          <li><Link className="dropdown-item" to="/">اطفال اولادى (من ٥ سنين ل ٨ سنين)</Link></li>
-                                          <li><Link className="dropdown-item" to="/">اطفال بناتى (من ٥ سنين ل ٨ سنين)</Link></li>
-                                          <li><Link className="dropdown-item" to="/">اطفال اولادى (من ٩ سنين ل ١٢ سنة)</Link></li>
-                                          <li><Link className="dropdown-item" to="/">اطفال بناتى (من ٩ سنين ل ١٢ سنة)</Link></li>
-                                          <li><Link className="dropdown-item" to="/">الجميع</Link></li>
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/">اطفال اولادى (من ٢ سنة ل ٤ سنين)</Link>
+                                             </button>
+                                          </li>
+
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/">اطفال بناتى (من ٢ سنة ل ٤ سنين)</Link>
+                                             </button>
+                                          </li>
+
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/">اطفال اولادى (من ٥ سنين ل ٨ سنين)</Link>
+                                             </button>
+                                          </li>
+
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/">اطفال بناتى (من ٥ سنين ل ٨ سنين)</Link>
+                                             </button>
+                                          </li>
+
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/">اطفال اولادى (من ٩ سنين ل ١٢ سنة)</Link>
+                                             </button>
+                                          </li>
+
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/">اطفال بناتى (من ٩ سنين ل ١٢ سنة)</Link>
+                                             </button>
+                                          </li>
+
+
+                                          <li >
+                                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                                <Link className="dropdown-item" to="/">الجميع</Link>
+                                             </button>
+                                          </li>
+
                                        </ul>
                                     </div>
 
@@ -229,14 +333,29 @@ export default function Navbar(){
 
 
 
-                           <div className="accordion-item">
-                              <Link to="/العروض">   
+                           <div className="accordion-item">  
                                  <h2 className="accordion-header">
-                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSex" aria-expanded="false" aria-controls="flush-collapseSex">
                                        العروض
                                     </button>
                                  </h2>
-                              </Link>
+
+
+                              <div id="flush-collapseSex" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+
+                                 <div className="accordion-body">
+                                    <ul className="sidBar_link overflow-auto">
+
+                                       <li >
+                                          <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                             <Link className="dropdown-item" to="/">العروض</Link>
+                                          </button>
+                                       </li>
+
+                                    </ul>
+                                 </div>
+
+                              </div>
                            </div>
 
 
@@ -244,15 +363,31 @@ export default function Navbar(){
 
 
 
-                           <div className="accordion-item">
-                              <Link to="/أحذية رجالى ">   
+                           <div className="accordion-item">  
                                  <h2 className="accordion-header">
-                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                                       أحذية رجالى    
+                                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                                       أحذية رجالى 
                                     </button>
                                  </h2>
-                              </Link>
+
+
+                              <div id="flush-collapseSeven" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+
+                                 <div className="accordion-body">
+                                    <ul className="sidBar_link overflow-auto">
+
+                                       <li >
+                                          <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
+                                             <Link className="dropdown-item" to="/">أحذية رجالى </Link>
+                                          </button>
+                                       </li>
+
+                                    </ul>
+                                 </div>
+
+                              </div>
                            </div>
+
 
                         </div>
                      </div>

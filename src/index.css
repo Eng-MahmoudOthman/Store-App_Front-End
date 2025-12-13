@@ -210,13 +210,20 @@
 
 
 .network {
-   background-color: #292929;
-   width: 100px;
+   background-color: #dedff2;
+   width: 450px;
+   height: 100px;
+   font-size: 20px;
+   margin: auto;
+   margin-bottom: 100px;
    border-radius: 5px;
    padding: 2px;
    text-align: center;
-   color: white !important;
-   margin: 16px 50%;
+   color: rgb(0, 0, 0) !important;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   -ms-border-radius: 5px;
+   -o-border-radius: 5px;
 }
 
 

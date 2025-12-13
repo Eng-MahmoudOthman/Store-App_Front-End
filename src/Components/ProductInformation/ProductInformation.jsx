@@ -3,12 +3,15 @@ import "./ProductInformation.css"
 import DownTime from '../DownTime/DownTime.jsx';
 import { CartContext } from '../../Context/CartContext.js';
 import Loading from '../Loading/Loading.jsx';
+import { WishListContext } from '../../Context/WishListContext.js';
 
 
 
 export default function ProductInformation({product}) {
 
    const{addToCart , cart , getLoggedCart , increaseItemCart , decreaseItemCart , loading} = useContext(CartContext) ;
+   const {updateWishList} = useContext(WishListContext) ;
+
    const [addWishList , setAddWishList] = useState(false) ;
    const [productItem, setProductItem] = useState({})
    const [ alert , setAlert] = useState(false) ;
@@ -33,13 +36,7 @@ export default function ProductInformation({product}) {
 
    const addToWishList = (id)=>{
       setAddWishList(!addWishList)
-      if(!addWishList){
-         console.log(true);
-         console.log( "Add To WishList" , id);
-      }else{
-         console.log(false);
-         console.log( "Remove To WishList" , id);
-      }
+      updateWishList(id);
    }
 
 
