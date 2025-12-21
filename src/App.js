@@ -6,7 +6,6 @@ import './App.css';
 
 import { Toaster } from 'react-hot-toast';
 // import { jwtDecode } from 'jwt-decode';
-import io from "../node_modules/socket.io/client-dist/socket.io.js"
 
 import Layout from './Components/Layout/Layout.jsx';
 import Home from './Components/Home/Home.jsx';
@@ -33,23 +32,32 @@ import LongWomen from './Components/WomenSocks/LongWomen/LongWomen.jsx';
 import Shops from './Components/Shops/Shops.jsx';
 import Offers from './Components/Offers/Offers.jsx';
 import MenShoes from './Components/MenShoes/MenShoes.jsx';
+import { useContext, useEffect } from 'react';
+import { UserContext } from './Context/UserContext.js';
+import { jwtDecode } from 'jwt-decode';
+import ShippingPolicy from './Components/ShippingPolicy/ShippingPolicy.jsx';
+import Checkout from './Components/Checkout/Checkout.jsx';
+import Order from './Components/Order/Order.jsx';
 
 
 
 
 
 
-const socket = io(process.env.REACT_APP_BASE_URL) ;
 
 
 
 let routers = createHashRouter([
 // let routers = createBrowserRouter([
-	{path:"/" , element:<Layout socket={socket}/> , children:[
+	{path:"/" , element:<Layout/> , children:[
 		{index:true , element:<Home/>} , 
 		{path:"contact" , element:<Contact/>} , 
+		{path:"ShippingPolicy" , element:<ShippingPolicy/>} , 
 		{path:"login" , element:<Login />} , 
 		{path:"register" , element:<Register/>} , 
+		{path:"forgetPassword/:id" , element:<ForgetPassword/>} , 
+		{path:"productDetails/:productSlug" , element:<ProductDetails/>} , 
+		{path:"discoverOffers" , element:<DiscoverOffers/>} , 
 		{path:"men-Socks" , element:<MenSocks/>} , 
 		{path:"shops" , element:<Shops/>} , 
 		{path:"offers" , element:<Offers/>} , 
@@ -65,11 +73,10 @@ let routers = createHashRouter([
 			{path:"women-Socks/half" , element:<HalfWomen/>} ,
 			{path:"women-Socks/invisible" , element:<InvisibleWomen/>} ,
 
-		{path:"productDetails/:productSlug" , element:<ProductDetails/>} , 
-		{path:"discoverOffers" , element:<DiscoverOffers/>} , 
-		{path:"forgetPassword/:id" , element:<ForgetPassword/>} , 
-		{path:"cart" , element:<Cart/>} , 
+		{path:"Cart" , element:<ProtectedRoute><Cart/></ProtectedRoute>} , 
+		{path:"Checkout" , element:<ProtectedRoute><Checkout/></ProtectedRoute>} , 
 		{path:"userProfile" , element:<ProtectedRoute><UserProfile/></ProtectedRoute>} , 
+		{path:"Order" , element:<ProtectedRoute><Order/></ProtectedRoute>} , 
 		{path:"*" , element:<NotFound/>} , 
 	]} ,
 ])
@@ -81,42 +88,17 @@ let routers = createHashRouter([
 
 function App() {
 
-	// const {setUserToken , setLoggedUser , loggedUser , setModerator , setAdmin} = useContext(UserContext)
-
-
-	// useEffect(() => {
-
-	// 	//& Get Token in Local Storage And Save in Use State :
-	// 	if(localStorage.getItem("token") != null){
-	// 		setUserToken(localStorage.getItem("token")) ;
-
-	// 		//& Decoded Token :
-	// 		function decodedToken(){
-	// 			const token =  localStorage.getItem('token'); 
-	// 			let decoded = jwtDecode(token);
-	// 			return decoded.role
-	// 		}
-	
-	// 		//& Check Admin Or Or Moderator Or User :
-	// 		if( decodedToken() === "admin"){
-	// 			setAdmin(true)
-	// 		}else if (decodedToken() === "moderator"){
-	// 			setModerator(true)
-	// 		}
-	// 	}
-	
-	
-	// 	if(localStorage.getItem("user") != null){
-	// 		setLoggedUser(JSON.parse(localStorage.getItem("user")))
-	// 	}
-	// }, [])
-
-	// useEffect(() => {
-   //    socket.emit("newUser" , {email: loggedUser.email , role:loggedUser.role})
-   //    socket.emit("all-Notification")
-   // }, [loggedUser])
-	
-
+	const {setRole , setUserToken , setLoggedUser} = useContext(UserContext) ;
+	useEffect(() => {
+		//& Get Token in Local Storage And Save in Use State :
+		if(localStorage.getItem("token") != null){
+			const token =  localStorage.getItem('token'); 
+			const decoded = jwtDecode(token);
+			setLoggedUser(decoded);
+			setUserToken(token) ;
+			setRole(decoded.role)
+		}
+	}, [])
 
 	return (
 		<>

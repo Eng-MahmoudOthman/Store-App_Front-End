@@ -5,8 +5,8 @@ import ReviewProductDetails from '../ReviewProductDetails/ReviewProductDetails.j
 import ProductInformation from "../ProductInformation/ProductInformation.jsx"
 import ProductItem from '../ProductItem/ProductItem.jsx';
 import axios from 'axios';
+import notification from '../../Utilities/notification.js';
 import "./productDetails.css";
-import { toast } from 'react-toastify';
 
 
 
@@ -23,15 +23,13 @@ export default function ProductDetails() {
 	const getSpecificProduct = async() => {
 		await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/products/${productSlug}`) 
 		.then((response)=> {
-         if(response?.data.message == "success"){
+         if(response?.data.message === "success"){
             setProductInfo(response?.data.product) ;
             setProductCategory(response?.data.product.category.slug)
          }
 		})
 		.catch((error)=>{
-         toast.error(error.response?.data.message , {
-            position: "top-right"
-         });
+         notification("error" , error.response.data.message)
 		})
 	}
 
@@ -42,9 +40,7 @@ export default function ProductDetails() {
 			setProducts(response?.data.products) ;
 		})
 		.catch((error)=>{
-         toast.error(error.response.data.message , {
-            position: "top-right"
-         });
+         notification("error" , error.response.data.message)
 		})
 	}
 

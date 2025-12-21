@@ -36,10 +36,10 @@ export default function Footer(){
                   <div className="col-md-6 col-lg-3 mt-4">
                      <h2 className="footer_title">معلومات</h2>
                      <ul>
-                        <li><Link to="/" className="footer_link">من نحن</Link></li>
-                        <li><Link to="/" className="footer_link">تواصل معنا</Link></li>
-                        <li><Link to="/" className="footer_link">سياسة الشحن</Link></li>
-                        <li><Link to="/" className="footer_link">سياسة الاستبدال</Link></li>
+                        <li><Link to="/contact" className="footer_link">من نحن</Link></li>
+                        <li><Link to="/contact" className="footer_link">تواصل معنا</Link></li>
+                        <li><Link to="/ShippingPolicy" className="footer_link">سياسة الشحن</Link></li>
+                        <li><Link to="/ShippingPolicy" className="footer_link">سياسة الاستبدال</Link></li>
                      </ul>
                   </div>
 

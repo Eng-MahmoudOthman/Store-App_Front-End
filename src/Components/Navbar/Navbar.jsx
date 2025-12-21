@@ -1,24 +1,36 @@
 import { Fragment, useContext } from "react" ;
 import "./navbar.css"
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../Assets/images/logo.png";
 import { CartContext } from "../../Context/CartContext.js";
 import { WishListContext } from "../../Context/WishListContext.js";
+import { UserContext } from "../../Context/UserContext.js";
 
 
 export default function Navbar(){
+   const navigate = useNavigate() ;
    const {cart , display , setDisplay} = useContext(CartContext) ;
+   const { setRole , userToken , setUserToken  , setLoggedUser} = useContext(UserContext) ;
    const {wishList , displayWishList , setDisplayWishList} = useContext(WishListContext) ;
 
    const displayCart = ()=>{
       // getLoggedCart() ;
       setDisplay(!display) ;
-   }
+   } ;
 
    const displayWishListHome = ()=>{
       setDisplayWishList(!displayWishList) ;
-      console.log("Display WishList");
-   }
+      console.log("Display WishList") ;
+   } ;
+
+   function handleLogout() {
+      navigate("/")
+      localStorage.removeItem('token') ; 
+      setRole (null) ;
+      setUserToken (null) ;
+      setLoggedUser (null) ;
+   } ;
+
 
    return (
       <Fragment>
@@ -31,16 +43,20 @@ export default function Navbar(){
             <nav className="navbar navbar-expand-lg " >
                <div className="container">
                   <div className="d-flex justify-content-between icon">
-                     <span onClick={()=>displayCart()} className="position-relative btn p-0 m-0" >
-                        <i className="fa-solid fa-cart-shopping"></i>
-                        <span className="cardList">{cart.cartItems?.length || 0}</span>
-                     </span>
-                     <span onClick={()=>displayWishListHome()} className="position-relative btn p-0 m-0">
-                        <i className="fa-regular fa-heart"></i> 
-                        {/* <span className="wishList ">0</span> */}
-                        <span className="wishList ">{wishList?.length || 0}</span>
-                     </span>
-                     <span ><i className="fa-regular fa-user "></i></span>
+
+                     {userToken && (
+                        <span onClick={()=>displayCart()} className="position-relative btn p-0 m-0" >
+                           <i className="fa-solid fa-cart-shopping"></i>
+                           <span className="cardList">{cart.cartItems?.length || 0}</span>
+                        </span>
+                     )}
+                     {userToken && (
+                        <span onClick={()=>displayWishListHome()} className="position-relative btn p-0 m-0">
+                           <i className="fa-regular fa-heart"></i> 
+                           <span className="wishList ">{wishList?.length || 0}</span>
+                        </span>
+                     )}
+                     {userToken && <Link to="/UserProfile" className="text-black" ><span ><i className="fa-regular fa-user "></i></span></Link>}
                      <span><i className="fa-solid fa-magnifying-glass"></i></span>
                   </div>
 
@@ -48,7 +64,6 @@ export default function Navbar(){
                      
                      <div className="offcanvas-header">
                         <Link className="navbar-brand" to="/"><img src={logo} width="180" height="30" alt="logo" /></Link>
-                        
                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
                      </div>
 
@@ -389,6 +404,17 @@ export default function Navbar(){
                            </div>
 
 
+
+
+
+
+                           <div className="accordion-item">  
+                                 <h2 className="accordion-header text-end mx-4">
+                                       {userToken && <button  className="btn  btn-outline-danger  btn-sm" onClick={()=>{handleLogout()}}>Logout</button>}
+                                 </h2>
+                           </div>
+
+
                         </div>
                      </div>
 
@@ -396,6 +422,7 @@ export default function Navbar(){
 
                   <Link className="navbar-brand" to="/"><img src={logo} className="logo-mobile  d-block " width="180" height="30" alt="logo" /></Link>
                   <Link className="navbar-brand logo_Navbar_lg d-none" to="/"><img src={logo} width="150" height="30" alt="logo" /></Link>
+                  {userToken && <button  className="btn btn-outline-danger logo_Navbar_lg d-none btn-sm"  onClick={()=>{handleLogout()}}>Logout</button>}
 
                   <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle ">
                      <span className="navbar-toggler-icon" />

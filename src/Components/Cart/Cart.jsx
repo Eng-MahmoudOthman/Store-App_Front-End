@@ -4,18 +4,16 @@ import CartItem from '../CartItem/CartItem.jsx';
 import './Cart.css'
 import Loading from '../Loading/Loading.jsx';
 import { useState } from 'react';
-
-
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export default function Cart() {
-
    const {cart , display , setDisplay , loading} = useContext(CartContext) ;
 	const[discount , setDiscount] = useState(false) ;
 	const[delivery , setDelivery] = useState(false) ;
-
+	const navigate = useNavigate() ;
 
 	useEffect(() => {
 		if(cart.total_Price_After_Discount?.Total > 1000 && cart.total_Price_After_Discount?.Total < 5000){
@@ -25,6 +23,12 @@ export default function Cart() {
 		}
 	}, [])
 
+
+	function handleCheckout(){
+		setDisplay(!display)
+		navigate("/Checkout") ;
+	} ;
+	
 	return (
 		<Fragment>
 			<div className='container-cart '>
@@ -48,12 +52,12 @@ export default function Cart() {
 								<div className='d-flex justify-content-between align-items-center px-5 border-top pt-2'>
 
 									<div className=''>
-										<h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount?.total_before_discount},00 جنيه </h6>
+										<h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount?.Total - 60},00 جنيه </h6>
 										{cart.total_Price_After_Discount.delivery?<h6 className='text-start fw-bold m-0 p-0 text-success' dir='rtl'>مجانا</h6>:<h6 className='text-start fw-bold m-0 p-0 text-danger' dir='rtl'>60,00 جنيه </h6>}
 										{cart.total_Price_After_Discount.discount? <h6 className='text-start fw-bold m-0 p-0 text-success' dir='rtl'>200,00 جنيه </h6> : ""}
-										{cart.total_Price_After_Discount?.discount_Amount? <h6 className='text-start fw-bold m-0 p-0 text-success' dir='rtl'>{cart.coupon_id.code}</h6> : ""}
+										{cart.total_Price_After_Discount?.discount_Amount? <h6 className='text-start fw-bold m-0 p-0 text-success' dir='rtl'>{cart.coupon_id?.code}</h6> : ""}
 										{cart.total_Price_After_Discount?.discount_Amount? <h6 className='text-start fw-bold m-0 p-0 text-success' dir='rtl'>{cart.total_Price_After_Discount?.discount_Amount},00 جنيه  </h6> : ""}
-										<h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount.delivery ? cart.total_Price_After_Discount?.Total +",00" : cart.total_Price_After_Discount?.Total + 60 +",00"}  جنيه </h6>
+										<h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount.discount_Amount ? cart.total_Price_After_Discount?.Total +",00" : cart.total_Price_After_Discount?.Total +",00"}  جنيه </h6>
 										{/* <h6 className='text-start fw-bold m-0 p-0' dir='rtl'>{cart.total_Price_After_Discount?.Total? cart.total_Price_After_Discount?.Total + 60 +",00" : cart.total_Price_After_Discount?.Total}  جنيه </h6> */}
 									</div>
 
@@ -75,7 +79,7 @@ export default function Cart() {
 
 							<div>
 								<div className='text-center'>
-									<button className='btn btn-cart main-btn w-75'>إتمام الطلب</button>
+									<button onClick={()=>{handleCheckout()}} className='btn btn-cart main-btn w-75'>إتمام الطلب</button>
 								</div>
 
 								<div className='text-center mb-2'>
@@ -91,5 +95,5 @@ export default function Cart() {
 			</div>
 		</Fragment>
 	)
-}
+} ;
 

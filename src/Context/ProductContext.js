@@ -23,14 +23,6 @@ export const ProductContext = createContext();
 
 export default function ProductContextProvider(props){
 
-
-
-
-   
-
-
-
-
    const products = [
       {id: "345sdffhdfydfg7457457" , name:'مجموعة 6 شرابات غير ظاهرة كود 4' , price:1000 , image:product10} ,
       {id: "345sdtrrtrhdghdgh7457" , name:'مجموعة 6 شرابات غير ظاهرة كود 4' , price:3000 ,  image:product2} ,

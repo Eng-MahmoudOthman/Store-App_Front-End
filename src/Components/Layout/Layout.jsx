@@ -4,32 +4,26 @@ import Navbar from "../Navbar/Navbar.jsx";
 import { Fragment } from "react";
 import Cart from "../Cart/Cart.jsx";
 import WishList from "../WishList/WishList.jsx";
-import Offline  from "../../Hooks/useNetwork.jsx";
+import NetworkStatus from "../NetworkStatus/NetworkStatus.jsx";
+import Login from "../Login/Login.jsx";
+import Register from "../Register/Register.jsx";
 
 export default function Layout({socket}){
+      // const{showLogin , showRegister} = useContext(UserContext) ;
+   
+
    return (
       <Fragment>
          <Navbar/>
-
          <Outlet></Outlet>
-
-         {/* <Offline>
-            <div className="network fixed-bottom text-danger">
-               <i className="fa-solid fa-wifi p-1 "></i> Offline
-            </div>
-         </Offline> */}
-
-         {/* <Online>
-            <div className="network fixed-bottom text-success">
-               <i className="fa-solid fa-wifi p-1 "></i> Online
-            </div>
-         </Online> */}
-         
-         <Offline/>
-
+         <NetworkStatus />
          <Cart/>
          <WishList/>
+         <Login/>
+         <Register/>
 
+         {/* {showLogin && <Login/>}
+         {showRegister && <Register/>} */}
          <Footer/>
       </Fragment>
    )

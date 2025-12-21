@@ -6,10 +6,12 @@ export default function DownTime() {
 
    const[date , setDate] = useState({}) ;
    const[initDate , setInitDate] = useState(new Date()) ;
+   // const[initDate , setInitDate] = useState("2026-08-01") ;
 
    
    setTimeout(() => {
-      setInitDate("Tue nov 30 2024 20:52:15 GMT+0200 (Eastern European Standard Time)")
+      setInitDate("2026-08-01")
+      // setInitDate("Tue apr 30 2026 20:52:15 GMT+0200 (Eastern European Standard Time)")
       // setInitDate("October 28, 2024 22:19:00")
    }, 2000);
 

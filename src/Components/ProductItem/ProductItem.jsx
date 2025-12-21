@@ -17,11 +17,6 @@ export default function ProductItem({product}) {
    const {wishList , updateWishList , displayWishList , setDisplayWishList} = useContext(WishListContext) ;
 
 
-   
-   const header = {
-      token:`${process.env.REACT_APP_SECRET_TOKEN} eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2E3MWQ0MTEyYWE2NTNkYmQzMDI1NTAiLCJuYW1lIjoibWFobW91ZCBvc21hbiBtYWhtb3VkIiwicGhvbmUiOiIwMTEyMjIyMjM4OCIsImVtYWlsIjoibWFobW91ZEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTczOTAwNTI4OH0.SfLBJ_ld5bTcUzcT6RRa4CajI_xW5UuCJaZFaFOQOoE`
-   }
-
    const addItemToCart = async(id)=>{
       setLoading(true)
       await addToCart(id)

@@ -1,6 +1,8 @@
 import axios from "axios";
-import { createContext , useEffect, useState } from "react";
+import { createContext , useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import notification from "../Utilities/notification.js";
+import { UserContext } from "./UserContext.js";
 
 
 
@@ -10,85 +12,87 @@ export const CartContext = createContext();
 export default function CartContextProvider(props){
    const[display , setDisplay] = useState(true) ;
    const[loading , setLoading] = useState(false) ;
-
+   const {logged , userToken} = useContext(UserContext) ;
    const[cart , setCart] = useState({}) ;
+   const[methods , setMethods] = useState([]) ;
+
    const header = {
-      token:`${process.env.REACT_APP_SECRET_TOKEN} eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzAzYWI2NTg3YWQ4MmNmMjE5ZjY3YjYiLCJuYW1lIjoibWFobW91ZCBvc21hbiIsInBob25lIjoiMDExMjIyMjIzODgiLCJlbWFpbCI6Im1haG1vdWRfVXNlckBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTczNDA5Mzg5OX0.OHVCwM68QH36a9pGwQMoIi6qyf6xavNYK4swJgK_5Es`
-   }
-
-
-
-   // Token Online :
-   // const header = {
-   //    token:`${process.env.REACT_APP_SECRET_TOKEN} eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzYxNmZiN2NkYmRlM2FiNmFhMTRmYWEiLCJuYW1lIjoibWFobW91ZCBvc21hbiBtYWhtb3VkIiwicGhvbmUiOiIwMTEyMjIyMjM4OCIsImVtYWlsIjoibWFobW91ZF9Vc2VyQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM0NDM4ODUwfQ.PlEgF38CMvuH-WDHlvbq9eMawNUoin5mEynK3yDH094`
-   // }
-
-
-      // let header = {
-   //    token:localStorage.getItem("token")  ,
-   // };
+      token:`${process.env.REACT_APP_SECRET_TOKEN} ${userToken}`
+   } ;
 
 
 
    async function addToCart(id){
+      if(!logged()) return ;
+
       setLoading(true)
       let response =  await axios.put(`${process.env.REACT_APP_BASE_URL}/api/v1/carts/add` , {product:id} , {headers:header} )
       .catch((error)=>{
          setLoading(false)
-         toast.error(error.response?.data.message , {
-            position: "top-right"
-         });
+         notification("error" , error.response?.data.message  )
          setDisplay(!display)
       })
 
       if(response?.data.message === "Added Successfully"){
          setLoading(false)
-         toast.success(response?.data.message , {
-            position: "top-right"
-         });
+         notification("success" , response?.data.message )
          setCart(response.data.cart) ;
          setDisplay(!display)
       }
-   }
+   } ;
+
+   async function applyCoupon(values){
+      if(!logged()) return ;
+
+      setLoading(true)
+      let response =  await axios.put(`${process.env.REACT_APP_BASE_URL}/api/v1/carts/coupon` , values , {headers:header} )
+      .catch((error)=>{
+         setLoading(false) ;
+         notification("error" , error.response?.data.message  ) ;
+      })
+
+      if(response?.data.message === "Coupon Added Successfully"){
+         setLoading(false) ;
+         notification("success" , response?.data.message ) ;
+         getLoggedCart() ;
+      }
+   } ;
 
    async function increaseItemCart(id){
+      if(!logged()) return ;
       setLoading(true)
       let response =  await axios.put(`${process.env.REACT_APP_BASE_URL}/api/v1/carts?quantity=increase` , {product:id} , {headers:header} )
       .catch((error)=>{
          setLoading(false)
-         toast.error(error.response?.data.message , {
-            position: "top-left"
-         });
+         notification("error" , error.response?.data.message  )
       })
       if(response?.data.message === "success"){
          setLoading(false)
          setCart(response.data.cart)
       }
-   }
+   } ;
 
    async function decreaseItemCart(id){
+      if(!logged()) return ;
       setLoading(true)
       let response =  await axios.put(`${process.env.REACT_APP_BASE_URL}/api/v1/carts?quantity=decrease` , {product:id} , {headers:header} )
       .catch((error)=>{
          setLoading(false)
-         toast.error(error.response?.data.message , {
-            position: "top-left"
-         });
+         notification("error" , error.response?.data.message  )
       })
       if(response?.data.message === "success"){
          setLoading(false)
          setCart(response.data.cart)
       }
-   }
+   } ;
    
    async function removeItemFromCart(id){
+      if(!logged()) return ;
       setLoading(true)
       let response =  await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/v1/carts/remove/${id}` , {headers:header} )
       .catch((error)=>{
          setLoading(false)
-         toast.error(error.response.data.message , {
-            position: "top-left"
-         });
+         notification("error" , error.response?.data.message  )
       })
       if(response?.data.message === "Remove Successfully"){
          setLoading(false)
@@ -97,37 +101,87 @@ export default function CartContextProvider(props){
          });
          setCart(response.data.cart)
       }
-   }
+   } ;
    
    async function getLoggedCart(){
-      let response =  await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/carts` ,  {headers:header} )
+      const header = {
+         token:`${process.env.REACT_APP_SECRET_TOKEN} ${localStorage.getItem("token")}`
+      }
+      const response =  await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/carts` ,  {headers:header} )
       .catch((error)=>{
-         toast.error(error.response?.data.message , {
-            position: "top-left"
-         });
+         setCart({}) ;
+         notification("error" , error.response?.data.message  )
       })
 
       if(response?.data.message === "success"){
          setCart(response.data.cart)
       }
-   }
+   } ;
 
+   async function createOrder(values){
+      if(!logged()) return ;
 
+      setLoading(true)
+      let response =  await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v1/orders` , values , {headers:header} )
+      .catch((error)=>{
+         setLoading(false) ;
+         notification("error" , error.response?.data.message  ) ;
+      })
+
+      if(response?.data.message === "success"){
+         setLoading(false) ;
+         notification("success" , "Create Order Successfully.") ;
+         setCart({});
+      }
+   } ;
+
+   async function getPaymentMethods(values){
+      if(!logged()) return ;
+      let response =  await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/orders/paymentMethod` , {headers:header} )
+      .catch((error)=>{
+         notification("error" , error.response?.data.message  ) ;
+      })
+      if(response?.data.message === "success"){
+         setMethods(response?.data.payment_method.data)
+      }
+   } ;
+
+   async function createOnlineOrder(values){
+      if(!logged()) return ;
+      setLoading(true)
+      let response =  await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v1/orders/create-session` , values , {headers:header} )
+      .catch((error)=>{
+         setLoading(false) ;
+         notification("error" , error.response?.data.message  ) ;
+      })
+
+      if(response?.data.success === true){
+         setLoading(false) ;
+         window.open(response?.data?.invoice.payment_data.redirectTo, "_blank");
+         setCart({});
+      }
+   } ;
 
    useEffect(() => {
-      getLoggedCart()
+      if(localStorage.getItem("token") !== null){
+         getLoggedCart() ;
+      }
    }, [])
    
-console.log(cart);
-
    return (
       <>
          <CartContext.Provider 
             value={{
                addToCart ,
+               applyCoupon ,
+               createOrder ,
+               getPaymentMethods ,
+               createOnlineOrder ,
                increaseItemCart ,
                decreaseItemCart , 
                removeItemFromCart ,
+               methods ,
+               setMethods ,
                display , 
                setDisplay ,
                getLoggedCart ,

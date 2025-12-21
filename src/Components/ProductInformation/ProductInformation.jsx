@@ -41,16 +41,21 @@ export default function ProductInformation({product}) {
 
 
 
+
    
    useEffect(() => {
-      const productObj = cart.cartItems?.find((ele)=>{
-         return ele.product?._id.toString() === product._id
-      })
-      setProductItem (productObj)
+      if(localStorage.getItem("token") !== null){
+         const productObj = cart.cartItems?.find((ele)=>{
+            return ele.product?._id.toString() === product._id
+         })
+         setProductItem (productObj)
+      }
    }, [cart , product])
 
    useEffect(() => {
-      getLoggedCart()
+      if(localStorage.getItem("token") !== null){
+         getLoggedCart() ;
+      }
    }, [])
 
    return (

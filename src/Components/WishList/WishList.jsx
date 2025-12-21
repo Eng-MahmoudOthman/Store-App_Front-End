@@ -28,7 +28,7 @@ export default function WishList() {
 							</div>
 
 							<div>
-								{wishList?.length ? "" : <p className='text-center my-2'>! لا يوجد منتجات في سلة التسوق</p>}
+								{wishList?.length ? "" : <p className='text-center my-2'>! لا يوجد اى منتجات مفضلة لديك حتى الأن   </p>}
 							</div>
 
 							<div className='section-body overflow-y-auto'>

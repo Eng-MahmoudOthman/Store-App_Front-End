@@ -101,10 +101,6 @@
 /*& ========== End Loading Component ============ */
 
 
-/* 
-.one {
-   animation: fadeIn .5s infinite alternate;
-} */
 
 
 
@@ -156,24 +152,7 @@
       padding: 6px 15px;
       color: black;
    }
-   /* .container_sliderHomeMan .div_sale ,
-   .container_sliderHomeWomen .div_sale {
-      background: linear-gradient(-45deg, #ce6bec 20%, var(--main-color) 100%);
-      top: 15px;
-      right: 30px;
-      padding: 2px 16px;
-      font-size: 14px;
-   } */
-   /* .container_sliderHomeMan .wishList_icon ,
-   .container_sliderHomeWomen .wishList_icon {
-      top: 190px;
-      right: 25px;
-      padding: 16px;
-      color: black;
-      font-size: 14px;
-      width: 20px;
-      height: 20px;
-   } */
+
    .div_sale {
       background: linear-gradient(-45deg, #ce6bec 20%, var(--main-color) 100%);
       top: 12px;
@@ -211,13 +190,12 @@
 
 .network {
    background-color: #dedff2;
-   width: 450px;
-   height: 100px;
+   height: 80px;
+   bottom: 0px;
    font-size: 20px;
-   margin: auto;
-   margin-bottom: 100px;
+   margin: 2px;
    border-radius: 5px;
-   padding: 2px;
+   padding: 10px;
    text-align: center;
    color: rgb(0, 0, 0) !important;
    -webkit-border-radius: 5px;
@@ -311,3 +289,90 @@
   @keyframes rotate {
    100%{    transform: rotate(360deg)}
  }
+
+
+
+
+
+
+
+
+ /*&======= Start  Added Star In Required Field ============*/
+
+label.required::after {
+   content: "*";
+   color: red;
+   position: relative;
+   left: 10px;
+   top: 10px;
+   font-weight: bold;
+   font-size: 25px;
+}
+label.not-required::after {
+   content: "*";
+   color: transparent;
+   position: relative;
+   left: 10px;
+   top: 10px;
+   font-weight: bold;
+   font-size: 25px;
+}
+/*&======= End Added Star In Required Field ============*/
+
+
+
+
+
+
+/*&======= Start Style To All Input Your Project ============*/
+
+.form-control {
+   padding: 8px;
+   border: 2px solid var(--main-color) ;
+}
+label.form-label{
+   margin: 0 !important;
+   /* color: var(--main-color); */
+}
+input::placeholder {
+   color: var(--main-color);
+   font-size: 18px;
+}
+
+.form-control:focus {
+   outline: 2px solid var(--main-color) !important ;
+   border: 2px solid var(--main-color) !important ;
+}
+
+.icon-input-field {
+   position: absolute;
+   top: 50px;
+   left: 30px;
+   color: var(--main-color);
+}
+/* .icon-input-field::after {
+   content: "";
+   position: absolute;
+   top: -14px;
+   left: 28px;
+   height: 42px; 
+   z-index: 999;
+   border-right: 2px solid var(--main-color);
+} */
+
+.toggle-password {
+   position: absolute;
+   color: var(--main-color);
+   top: 50px !important;
+   right: 10px;
+   top: 50%;
+   transform: translateX(-50%);
+   -webkit-transform: translateX(-50%);
+   -moz-transform: translateX(-50%);
+   -ms-transform: translateX(-50%);
+   -o-transform: translateX(-50%);
+}
+
+/*&======= End Style To All Input Your Project ============*/
+
+
