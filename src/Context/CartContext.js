@@ -14,6 +14,7 @@ export default function CartContextProvider(props){
    const[loading , setLoading] = useState(false) ;
    const {logged , userToken} = useContext(UserContext) ;
    const[cart , setCart] = useState({}) ;
+   const[order , setOrder] = useState({}) ;
    const[methods , setMethods] = useState([]) ;
 
    const header = {
@@ -117,6 +118,21 @@ export default function CartContextProvider(props){
          setCart(response.data.cart)
       }
    } ;
+   
+   async function getLoggedOrders(){
+      const header = {
+         token:`${process.env.REACT_APP_SECRET_TOKEN} ${localStorage.getItem("token")}`
+      }
+      const response =  await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/orders` ,  {headers:header} )
+      .catch((error)=>{
+         setOrder({}) ;
+         notification("error" , error.response?.data.message  )
+      })
+
+      if(response?.data.message === "success"){
+         setOrder(response.data.orders.reverse()[0]) ;
+      }
+   } ;
 
    async function createOrder(values){
       if(!logged()) return ;
@@ -180,11 +196,14 @@ export default function CartContextProvider(props){
                increaseItemCart ,
                decreaseItemCart , 
                removeItemFromCart ,
+               getLoggedCart ,
+               getLoggedOrders ,
+               order , 
+               setOrder ,
                methods ,
                setMethods ,
                display , 
                setDisplay ,
-               getLoggedCart ,
                cart , 
                setCart ,
                loading ,

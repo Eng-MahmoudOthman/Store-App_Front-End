@@ -21,6 +21,7 @@ export default function Checkout() {
       async function submitCreateOrder(values , { resetForm }){
          if(displayPayment){
             values.payment_method_id = paymentMethod ;
+            values.payment_Type = "card" ;
             createOnlineOrder(values) ;
          }else{
             createOrder(values) ;
