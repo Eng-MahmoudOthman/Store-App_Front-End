@@ -1,5 +1,4 @@
 import React, { useContext } from 'react' ;
-import "./userProfile.css" ;
 
 import { Fragment } from 'react'
 import { UserContext } from '../../Context/UserContext.js';

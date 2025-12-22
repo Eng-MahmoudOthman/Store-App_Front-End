@@ -39,7 +39,7 @@ export default function Order() {
          }
          <div ref={printRef} className="card shadow">
                {/* Header */}
-               <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+               <div className="card-header bg-main text-white d-flex justify-content-between align-items-center">
                   <h3 className="mb-0">Order</h3>
                   <span className={`badge ${
                      order.orderStatus === "pending" ? "bg-warning text-dark" : "bg-success"
@@ -93,7 +93,7 @@ export default function Order() {
                {/* Print Button */}
                <div className="card-footer text-center">
                   <button
-                     className="btn btn-primary"
+                     className="btn bg-main"
                      onClick={handlePrint}
                   >
                      Print Order
