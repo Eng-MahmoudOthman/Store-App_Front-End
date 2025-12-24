@@ -1,8 +1,6 @@
-import React, { Fragment, useContext, useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import "./discoverOffers.css"
 import { Link } from 'react-router-dom'
-import image1 from "../../Assets/images/Women-300x300.jpg"
-import { ProductContext } from '../../Context/ProductContext.js'
 import ProductItem from '../ProductItem/ProductItem.jsx'
 import axios from 'axios'
 import { useQuery } from 'react-query'
@@ -16,7 +14,7 @@ export default function DiscoverOffers() {
    const getProducts =  ()=>{
       return axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/products/all`) ;
    }
-   const { error , data , isError , isLoading  , isFetching} = useQuery("allProducts" , getProducts , {
+   const { error , data , isError , isLoading} = useQuery("allProducts" , getProducts , {
       // cacheTime:3000 , // cash Time
       // refetchOnMount:false , // Prevent Refetch
       // staleTime:30000 , // Show Time Old Data 

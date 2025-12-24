@@ -34,7 +34,7 @@ export default function Offers() {
 			setLoading(false)
 		})
 		.catch((error)=>{
-			if(error.response?.data.message == "Products is Empty"){
+			if(error.response?.data.message === "Products is Empty"){
 				setMessage(true)
 			}
 			// console.log(error.response.data.message);

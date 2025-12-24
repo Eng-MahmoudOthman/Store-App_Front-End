@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext.js';
 import "./ProductItem.css" ;
 import LoadingBtn from '../LoadingBtn/LoadingBtn.jsx';
-import axios from 'axios';
 import { WishListContext } from '../../Context/WishListContext.js';
-// import { toast } from 'react-toastify';
 
 
 
@@ -14,7 +12,7 @@ export default function ProductItem({product}) {
    const{addToCart} = useContext(CartContext) ;
    const [loading , setLoading] = useState(false) ;
    const [addWishList , setAddWishList] = useState(false) ;
-   const {wishList , updateWishList , displayWishList , setDisplayWishList} = useContext(WishListContext) ;
+   const { updateWishList} = useContext(WishListContext) ;
 
 
    const addItemToCart = async(id)=>{
@@ -25,14 +23,7 @@ export default function ProductItem({product}) {
 
 
    function addToWishList(id){
-      // setAddWishList(!addWishList)
-      // if(!addWishList){
-      //    console.log(true);
-      //    console.log( "Add To WishList" , id);
-      // }else{
-      //    console.log(false);
-      //    console.log( "Remove To WishList" , id);
-      // }
+      setAddWishList(!addWishList)
       updateWishList(id)
    }
 

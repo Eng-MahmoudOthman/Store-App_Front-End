@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ProductItem from '../ProductItem/ProductItem.jsx';
 import axios from 'axios';

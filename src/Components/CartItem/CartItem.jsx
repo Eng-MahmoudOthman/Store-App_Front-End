@@ -45,7 +45,7 @@ export default function CartItem({item}) {
                </div>
 
                <div className="image-cart">
-                  <img src={item.product?.imgCover.secure_url} alt="image" className=' w-100' />
+                  <img src={item.product?.imgCover.secure_url} alt="product" className=' w-100' />
                </div>
             </div>
 

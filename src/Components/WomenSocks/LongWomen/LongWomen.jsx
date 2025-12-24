@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from 'react';
+import React, { Fragment , useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductItem from '../../ProductItem/ProductItem.jsx';
 import axios from 'axios';
@@ -47,9 +47,6 @@ export default function LongWomen() {
 				</nav>
 
 				<div className="container">
-					{/* <div className="alertOffers bg-body-secondary">
-							<p className='m-0 p-1' dir='rtl'> لا توجد منتجات تتوافق مع اختيارك .</p>
-					</div> */}
 
 					<div className="row justify-content-evenly align-items-center my-5 mx-2">
 						<div className="col-6 col-md-4">
@@ -64,11 +61,6 @@ export default function LongWomen() {
 								</select>
 							</form>
 						</div>
-
-
-
-
-
 
 
 						<div className="col-6 col-md-8">

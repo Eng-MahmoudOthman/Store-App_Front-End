@@ -1,6 +1,5 @@
 import React , { Fragment, useContext } from 'react';
 import "./wishList.css"
-// import Loading from '../Loading/Loading.jsx';
 import { WishListContext } from '../../Context/WishListContext.js';
 import Loading from '../Loading/Loading.jsx';
 import WistListItem from '../WistListItem/WistListItem.jsx';
@@ -14,8 +13,6 @@ export default function WishList() {
 
    const {wishList , displayWishList , setDisplayWishList , loading} = useContext(WishListContext) ;
 
-	// console.log(wishList.length);
-	
 	return (
 		<Fragment>
 			<div className='container-wishList '>

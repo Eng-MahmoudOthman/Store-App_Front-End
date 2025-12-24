@@ -1,5 +1,4 @@
 import React, { useContext } from 'react' ;
-import image2 from "../../Assets/images/5EC74E59-B4FC-4DCE-AAE6-02270F754406-scaled-85x85.jpeg";
 
 import "./FooterProductDetails.css"
 import { CartContext } from '../../Context/CartContext.js';
@@ -24,7 +23,7 @@ export default function FooterProductDetails({product}) {
 
             <div className='d-flex justify-content-between align-items-center'>
                <h6 className='title_productDetails_footer'>{product.name}</h6>
-               <img src={product.imgCover?.secure_url} className='image_footer'  alt="image" />
+               <img src={product.imgCover?.secure_url} className='image_footer'  alt="product" />
             </div>
          </div>
       </footer>

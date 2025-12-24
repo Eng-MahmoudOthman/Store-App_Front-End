@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { CartContext } from '../../Context/CartContext.js';
 import { useNavigate } from 'react-router-dom';
 import style from "./checkout.module.css" ;
+import Loading from '../Loading/Loading.jsx';
 
 
 
@@ -178,7 +179,9 @@ export default function Checkout() {
 
                            {displayPayment?
                               <div className="payment-methods ">
-                                 {methods.map((ele)=>  
+                                 {methods.length? 
+                                 <>
+                                    {methods.map((ele)=>  
                                     <div className="form-check payment-item">
                                        <input
                                           className="form-check-input"
@@ -193,6 +196,10 @@ export default function Checkout() {
                                        </label>
                                     </div>
                                  )}
+                                 </>
+                                    :
+                                    <Loading/>
+                                 }
                               </div>
                            : ""}
 
